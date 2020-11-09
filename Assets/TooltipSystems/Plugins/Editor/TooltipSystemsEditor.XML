@@ -1,0 +1,935 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TooltipSystemsEditor</name>
+    </assembly>
+    <members>
+        <member name="T:TooltipSystemsEditor.Core.TooltipCoreEditorWindow">
+            <summary>
+            Editor window to editor all scene Tooltips in one place
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.Core.TooltipCoreEditorWindow.Instance">
+            <summary>
+            Static access to this window
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCoreEditorWindow.Init">
+            <summary>
+            Called by the menu to open the Tooltip edit window
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCoreEditorWindow.DrawOpenEditorWindowButton">
+            <summary>
+            Draws a button to open the Tooltip Editor window
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCoreEditorWindow.OnEnable">
+            <summary>
+            Called when window is opened
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCoreEditorWindow.IsOpened">
+            <summary>
+            Checks window is opened
+            </summary>
+            <returns>true if window is opened</returns>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCoreEditorWindow.OnDestroy">
+            <summary>
+            Called when window is destroyed
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCoreEditorWindow.OnSelectionChange">
+            <summary>
+            Called when Object selection changes
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCoreEditorWindow.OnHierarchyChange">
+            <summary>
+            Called when hierarchy has changd
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCoreEditorWindow.OnInspectorUpdate">
+            <summary>
+            Called when Inspector is updated
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCoreEditorWindow.OnGUI">
+            <summary>
+            Draws windos GUI controls
+            </summary>
+        </member>
+        <member name="T:TooltipSystemsEditor.Core.TooltipCoreCanvasEditor">
+            <summary>
+            Draws custom TooltipBasePanel in the Editor
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.Core.TooltipCoreCanvasEditor.m_TooltipPanelPrefabViewer">
+            <summary>
+            TooltipPanelPrefab field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.Core.TooltipCoreCanvasEditor.m_AutoScaleViewer">
+            <summary>
+            AutoScale field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.Core.TooltipCoreCanvasEditor.m_WrapLengthViewer">
+            <summary>
+            WrapLength field value
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCoreCanvasEditor.OnEnable">
+            <summary>
+            Called to instantiate local variables
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCoreCanvasEditor.OnInspectorGUI">
+            <summary>
+            Implement this function to make a custom inspector.
+            Call to draw TooltipBasePanel editor.
+            </summary>
+        </member>
+        <member name="T:TooltipSystemsEditor.Core.TooltipCorePanelEditor">
+            <summary>
+            Draws custom TooltipBasePanel in the Editor
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.Core.TooltipCorePanelEditor.hideDelayTimeViewer">
+            <summary>
+            hideDelayTime field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.Core.TooltipCorePanelEditor.m_TooltipTextViewer">
+            <summary>
+            TooltipText field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.Core.TooltipCorePanelEditor.m_TooltipImageViewer">
+            <summary>
+            TooltipImage field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.Core.TooltipCorePanelEditor.m_HideTriggerViewer">
+            <summary>
+            HideTrigger field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.Core.TooltipCorePanelEditor.m_HideFastTriggerViewer">
+            <summary>
+            HideFastTrigger field value
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCorePanelEditor.OnEnable">
+            <summary>
+            Called to instantiate local variables
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCorePanelEditor.OnInspectorGUI">
+            <summary>
+            Implement this function to make a custom inspector.
+            Call to draw TooltipBasePanel editor.
+            </summary>
+        </member>
+        <member name="T:TooltipSystemsEditor.Core.TooltipCoreUIEditor">
+            <summary>
+            Provides a custom default inspector for derived classes of TooltipCoreUI
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCoreUIEditor.OnEnable">
+            <summary>
+            Call to initialize class
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCoreUIEditor.OnDisable">
+            <summary>
+            Inspector is closing cleanup
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCoreUIEditor.OnInspectorGUI">
+            <summary>
+            Called by Editor to draw the inspector
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCoreUIEditor.DrawDefaultInspector(UnityEditor.SerializedObject)">
+            <summary>
+            Use to draw a custom inspector for derived classes of TooltipCoreUI.
+            This call includes a button to locate the tooltip canvas prefab
+            </summary>
+            <param name="serializedObject">SerializedObject of derived class</param>
+        </member>
+        <member name="M:TooltipSystemsEditor.Core.TooltipCoreUIEditor.DrawInspector(UnityEditor.SerializedObject)">
+            <summary>
+            Use to draw a custom inspector for derived classes of TooltipCoreUI
+            </summary>
+            <param name="serializedObject">SerializedObject of derived class</param>
+        </member>
+        <member name="T:TooltipSystemsEditor.Events.TooltipEventDrawer">
+            <summary>
+            Draws custom TooltipBaseUI in the Editor
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.Events.TooltipEventDrawer.m_Property">
+            <summary>
+            Current property being modified
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Events.TooltipEventDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Method to specify how tall the GUI for this field is in pixels.
+            </summary>
+            <param name="property">The SerializedProperty to make the custom GUI for.</param>
+            <param name="label">The label of this property.</param>
+            <returns>The height in pixels.</returns>
+        </member>
+        <member name="M:TooltipSystemsEditor.Events.TooltipEventDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            This method draws GUI for the property.
+            </summary>
+            <param name="position">Rectangle on the screen to use for the property GUI.</param>
+            <param name="property">The SerializedProperty to make the custom GUI for.</param>
+            <param name="label">The label of this property.</param>
+        </member>
+        <member name="M:TooltipSystemsEditor.Events.TooltipEventDrawer.DrawEventHeader(UnityEngine.Rect)">
+            <summary>
+            Draws the header for the list
+            </summary>
+            <param name="headerRect">Rectangle on the screen to use for the property GUI.</param>
+        </member>
+        <member name="T:TooltipSystemsEditor.Events.EventsTooltipEditor">
+            <summary>
+            Provides base functionality for editing event Tooltip items
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.Events.EventsTooltipEditor.m_TooltipUIViewer">
+            <summary>
+            Tooltip field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.Events.EventsTooltipEditor.m_TooltipEventsProperty">
+            <summary>
+            TooltipEvent field value
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Events.EventsTooltipEditor.OnEnable">
+            <summary>
+            Call to initialize class
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Events.EventsTooltipEditor.OnDisable">
+            <summary>
+            Inspector is closing
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Events.EventsTooltipEditor.OnInspectorGUI">
+            <summary>
+            Called to draw inspector controls
+            </summary>
+        </member>
+        <member name="T:TooltipSystemsEditor.Events.TooltipEventUIEditor">
+            <summary>
+            Provides base functionality for editing event Tooltip items
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.Events.TooltipEventUIEditor.m_TooltipEventsProperty">
+            <summary>
+            TooltipEvent field value
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Events.TooltipEventUIEditor.OnEnable">
+            <summary>
+            Call to initialize class
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Events.TooltipEventUIEditor.OnDisable">
+            <summary>
+            Inspector is closing
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.Events.TooltipEventUIEditor.OnInspectorGUI">
+            <summary>
+            Called to draw inspector controls
+            </summary>
+        </member>
+        <member name="T:TooltipSystemsEditor.External.ColliderTooltipEditor">
+            <summary>
+            Collider Tooltip Custom Editor
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.ColliderTooltipEditor.m_MaskProperty">
+            <summary>
+            Mask field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.ColliderTooltipEditor.m_TagProperty">
+            <summary>
+            Tag field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.ColliderTooltipEditor.m_LayerProperty">
+            <summary>
+            Layer field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.ColliderTooltipEditor.m_AddColliderComponent">
+            <summary>
+            Interface add 2D or 3D components to GameObjects
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.ColliderTooltipEditor.OnEnable">
+            <summary>
+            Call to initialize class
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.ColliderTooltipEditor.OnInspectorGUI">
+            <summary>
+            Called to draw inspector controls
+            </summary>
+        </member>
+        <member name="T:TooltipSystemsEditor.External.CollisionTooltipEditor">
+            <summary>
+            Provides functionality for editing Collision Tooltip items
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.CollisionTooltipEditor.m_DetectIsTriggerProperty">
+            <summary>
+            DetectIsTrigger field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.CollisionTooltipEditor.m_IsTriggerProperty">
+            <summary>
+            IsTrigger field value
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.CollisionTooltipEditor.OnEnable">
+            <summary>
+            Call to initialize class
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.CollisionTooltipEditor.OnInspectorGUI">
+            <summary>
+            Called to draw inspector controls
+            </summary>
+        </member>
+        <member name="T:TooltipSystemsEditor.External.TooltipReferenceDrawer">
+            <summary>
+            Drawer for drawing tooltip object reference circle selector
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.TooltipReferenceDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Gets height to draw property
+            </summary>
+            <param name="property">Property to be drawn</param>
+            <param name="label">Label text ant tooltip for control</param>
+            <returns>Height to draw property</returns>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.TooltipReferenceDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Draw the property inside the given rect
+            </summary>
+            <param name="position">Position that property will be drawn</param>
+            <param name="property">Property to be drawn</param>
+            <param name="label">Label text ant tooltip for control</param>
+        </member>
+        <member name="T:TooltipSystemsEditor.External.AddGraphicalModeComponent">
+            <summary>
+            Interface add 2D or 3D components to GameObjects
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.AddGraphicalModeComponent.filterTypes">
+            <summary>
+            Filter types for component to add are the types to compare to has types for 2D or 3D components
+            <para>Empty array to not require selection types</para>
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.AddGraphicalModeComponent.hasTypes">
+            <summary>
+            2D and 3D types that are required for compatablility
+            <para>Empty array to not require selection types</para>
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.AddGraphicalModeComponent.selectionTypes">
+            <summary>
+            Selection types for component to add
+            <para>Empty array to not require selection types</para>
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.AddGraphicalModeComponent.name">
+            <summary>
+            Name to reference in desctiption of info box
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.External.AddGraphicalModeComponent.target">
+            <summary>
+            Target to check for graphical mode component
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.AddGraphicalModeComponent.index">
+            <summary>
+            Index of selected component in the popup list
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.AddGraphicalModeComponent.component">
+            <summary>
+            Component that was added
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.AddGraphicalModeComponent.#ctor(UnityEngine.Component,System.String,System.Type[],System.Type[],System.Type[])">
+            <summary>
+            Constructor
+            </summary>
+            <param name="target">Target to check for graphical mode component</param>
+            <param name="name">Name to reference in desctiption of info box</param>
+            <param name="hasTypes">2D and 3D types that are required for compatablility</param>
+            <param name="filterTypes">Filter types for component to add are the types to compare to has types for 2D or 3D components</param>
+            <param name="selectionTypes">Selection types for component to add</param>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.AddGraphicalModeComponent.CheckForComponent(UnityEngine.Component)">
+            <summary>
+            Check to ensure the required 2D or 3D components are added to the GameObject
+            </summary>
+            <param name="target">Target to check for graphical mode component</param>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.AddGraphicalModeComponent.CheckToAddComponentGraphicalMode(UnityEngine.Component,System.String,System.Type[],System.Type[],System.Int32@,UnityEngine.Component@,System.Type[])">
+            <summary>
+            Check to ensure the required 2D or 3D components are added to the GameObject
+            </summary>
+            <param name="target">Target component to check</param>
+            <param name="name">Label text to show</param>
+            <param name="hasTypes">Types to check if is available on the GameObject, list of two 2D and 3D version</param>
+            <param name="filterTypes">Types to filter out for specific 2D or 3D components previously added, list of two 2D and 3D version</param>
+            <param name="index">Index of selected component in the popup list</param>
+            <param name="component">Component that was added</param>
+            <param name="selectionTypes">List of component types to choose from to add to GameObject</param>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.AddGraphicalModeComponent.CheckToAddComponentGraphicalMode(UnityEngine.Component,System.String,TooltipSystemsEditor.External.AddGraphicalModeComponent)">
+            <summary>
+            Check to ensure the required 2D or 3D components are added to the GameObject
+            </summary>
+            <param name="target">Target component to check</param>
+            <param name="name">Label text to show</param>
+            <param name="addGraphicalModeComponent">Lists of components to check and compare to for selection of a compatible component</param>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.AddGraphicalModeComponent.AddComponentGraphicalMode(UnityEngine.Component,System.String,System.Type[],System.Int32@,UnityEngine.Component@,System.Type[])">
+            <summary>
+            Button and functionality to add required component to active GameObject
+            </summary>
+            <param name="target">Target component to check</param>
+            <param name="name">label text to show</param>
+            <param name="filterTypes">Types to filter out for specific 2D or 3D components previously added, list of two 2D and 3D version</param>
+            <param name="index">Index of selected component in the popup list</param>
+            <param name="component">Component that was added</param>
+            <param name="selectionTypes">Types to choose from to add to GameObject</param>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.AddGraphicalModeComponent.AddComponentButton(UnityEngine.Component,System.String,System.Type[],System.Int32@,UnityEngine.Component@)">
+            <summary>
+            Button and functionality to add required component to active GameObject
+            </summary>
+            <param name="target">Target component to check</param>
+            <param name="name">label text to show</param>
+            <param name="types">Types to choose from to add to GameObject</param>
+            <param name="index">Index of selected component in the popup list</param>
+            <param name="component">Component that was added</param>
+            <returns>True if component was added, false if not</returns>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.AddGraphicalModeComponent.AddComponentButton(UnityEngine.Component,System.String,System.Type,System.Int32@,UnityEngine.Component@)">
+            <summary>
+            Button and functionality to add required component to active GameObject
+            </summary>
+            <param name="target">Target component to check</param>
+            <param name="name">Label text to show</param>
+            <param name="type">Required component type</param>
+            <param name="index">Index of selected component in the popup list</param>
+            <param name="component">Component that was added</param>
+            <returns>True if component was added, false if not</returns>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.AddGraphicalModeComponent.AddComponentButton``1(UnityEngine.Component,System.Int32@,UnityEngine.Component@)">
+            <summary>
+            Button and functionality to add required component to active GameObject
+            </summary>
+            <param name="target">Target component to check</param>
+            <typeparam name="T">Required component type</typeparam>
+            <param name="index">Index of selected component in the popup list</param>
+            <param name="component">Component that was added</param>
+            <returns>True if component was added, false if not</returns>
+        </member>
+        <member name="T:TooltipSystemsEditor.External.TooltipExpandedUIEditor">
+            <summary>
+            Provides base functionality for editing expanded Tooltip items
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.TooltipExpandedUIEditor.m_PrefabIndexViewer">
+            <summary>
+            Tooltip field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.TooltipExpandedUIEditor.m_PrefabPanel">
+            <summary>
+            Currently selected panel prefab
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.TooltipExpandedUIEditor.OnEnable">
+            <summary>
+            Call to initialize class
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.TooltipExpandedUIEditor.OnDisable">
+            <summary>
+            Inspector is closing
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.TooltipExpandedUIEditor.OnInspectorGUI">
+            <summary>
+            Called to draw inspector controls
+            </summary>
+        </member>
+        <member name="T:TooltipSystemsEditor.External.ExecuteTooltipEditor">
+            <summary>
+            Provides base functionality for editing External Tooltip items
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.ExecuteTooltipEditor.m_TooltipUIProperty">
+            <summary>
+            Tooltip field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.ExecuteTooltipEditor.m_PrefabIndexProperty">
+            <summary>
+            Tooltip field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.ExecuteTooltipEditor.m_WrapLengthProperty">
+            <summary>
+            Tooltip field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.ExecuteTooltipEditor.m_ShowDelayProperty">
+            <summary>
+            ShowDelay field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.ExecuteTooltipEditor.m_ShowPositionProperty">
+            <summary>
+            ShowPosition field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.ExecuteTooltipEditor.m_ResetShowedProperty">
+            <summary>
+            ResetOnExit field value
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.ExecuteTooltipEditor.m_PrefabPanel">
+            <summary>
+            Currently selected panel prefab
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.ExecuteTooltipEditor.OnEnable">
+            <summary>
+            Call to initialize class
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.ExecuteTooltipEditor.OnDisable">
+            <summary>
+            Inspector is closing
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.ExecuteTooltipEditor.OnInspectorGUI">
+            <summary>
+            Called to draw inspector controls
+            </summary>
+        </member>
+        <member name="T:TooltipSystemsEditor.External.PointerTooltipEditor">
+            <summary>
+            Provides functionality for editing Pointer Tooltip items
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.PointerTooltipEditor.m_PointerConditionProperty">
+            <summary>
+            PointerCondition field value
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.PointerTooltipEditor.OnEnable">
+            <summary>
+            Call to initialize class
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.PointerTooltipEditor.OnInspectorGUI">
+            <summary>
+            Called to draw inspector controls
+            </summary>
+        </member>
+        <member name="T:TooltipSystemsEditor.External.TooltipPanelPrefabIndexDrawer">
+            <summary>
+            Drawer for drawing tooltip panel prefab selector
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.TooltipPanelPrefabIndexDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Gets height to draw property
+            </summary>
+            <param name="property">Property to be drawn</param>
+            <param name="label">Label text ant tooltip for control</param>
+            <returns>Height to draw property</returns>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.TooltipPanelPrefabIndexDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Draw the property inside the given rect
+            </summary>
+            <param name="position">Position that property will be drawn</param>
+            <param name="property">Property to be drawn</param>
+            <param name="label">Label text ant tooltip for control</param>
+        </member>
+        <member name="T:TooltipSystemsEditor.External.PropertyViewer">
+            <summary>
+            Wrapps a SerializedProperty to provide enabled/disabled and visiblity changes in the Inspector
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.External.PropertyViewer.property">
+            <summary>
+            The property to be wrapped
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.External.PropertyViewer.enabled">
+            <summary>
+            Property control is enabled/disabled in the Inspector
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.External.PropertyViewer.visible">
+            <summary>
+            Property control is visible/hidden in the Inspector
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.External.PropertyViewer.IsVisible">
+            <summary>
+            Property control is visible/hidden in the Inspector
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.External.PropertyViewer.IsEnabled">
+            <summary>
+            Property control is enabled/disabled in the Inspector
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.PropertyViewer.#ctor(UnityEditor.SerializedProperty,System.Boolean,System.Boolean)">
+            <summary>
+            Created a wrapper for a property to provide enabling and visiblity changes
+            </summary>
+            <param name="property">Property to be wrapped</param>
+            <param name="enabled">Default enabled state</param>
+            <param name="visible">Default visiblity state</param>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.PropertyViewer.PropertyField(UnityEngine.GUIContent,System.Boolean)">
+            <summary>
+            Shows an EditorGUILayout PropertyField with the desired states
+            </summary>
+            <param name="label">Label to show for control</param>
+            <param name="includeChildren">Include children if property is a reference or value type</param>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.PropertyViewer.PropertyField(System.String,System.Boolean)">
+            <summary>
+            Shows an EditorGUILayout PropertyField with the desired states
+            </summary>
+            <param name="label">Label to show for control</param>
+            <param name="includeChildren">Include children if property is a reference or value type</param>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.PropertyViewer.TagField(System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Shows an EditorGUILayout TagField with the desired states
+            </summary>
+            <param name="label">Text to show as control label</param>
+            <param name="enabled">The control is enabled or disabled</param>
+            <param name="visible">The control is visible or hidden</param>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.PropertyViewer.Popup(System.String[],System.String)">
+            <summary>
+            Shows an EditorGUILayout Popup with the desired states
+            </summary>
+            <param name="displayOptions">Values to shoe in popup</param>
+            <param name="label">Text to show as control label</param>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.PropertyViewer.EnableReorderableEventsViewer(UnityEditor.SerializedObject,UnityEditor.SerializedProperty,UnityEngine.Events.UnityAction,System.Collections.Generic.Dictionary{System.String,UnityEditor.AnimatedValues.AnimBool})">
+            <summary>
+            Call in OnEnable to initilizes a re-orderable list from an array of Tooltip Events
+            </summary>
+            <param name="serializedObject">SerializedObject containing a reference to the array</param>
+            <param name="tooltipEventsViewer">Property viewer of the Tooltip Events SerializedProperty</param>
+            <param name="animBoolCallback">Callback to invoke while animating</param>
+            <param name="foldOuts">AnimBool collection to retain last foldout state</param>
+            <returns>ReorderableList that can be easily changed</returns>
+            <exception cref="T:System.TypeInitializationException">Thrown when failed to initilize the ReorderableList</exception>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.PropertyViewer.DoLayoutListEventsViewer(UnityEditorInternal.ReorderableList,UnityEditor.SerializedObject)">
+            <summary>
+            Call in OnInspectorGUI to draw the inspector gui
+            </summary>
+            <param name="reorderableList">ReorderableList to draw</param>
+            <param name="serializedObject">SerializedObject containing a reference to the array</param>
+        </member>
+        <member name="T:TooltipSystemsEditor.External.TooltipExpandedCanvasEditor">
+            <summary>
+            Draws custom TooltipExpandedCanvas in the Editor
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.TooltipExpandedCanvasEditor.m_CameraViewer">
+            <summary>
+            Camera field
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.TooltipExpandedCanvasEditor.m_UsePoolProperty">
+            <summary>
+            UsePool field
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.TooltipExpandedCanvasEditor.m_PoolPrefabsProperty">
+            <summary>
+            PoolData field
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.TooltipExpandedCanvasEditor.OnEnable">
+            <summary>
+            Call to initialize class
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.TooltipExpandedCanvasEditor.OnInspectorGUI">
+            <summary>
+            Implement this function to make a custom inspector.
+            <para>Call to draw TooltipExpandedCanvas editor.</para>
+            </summary>
+        </member>
+        <member name="T:TooltipSystemsEditor.External.TooltipPersistentPanelEditor">
+            <summary>
+            Draws custom TooltipPersistentPanel in the Editor
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.TooltipPersistentPanelEditor.m_ButtonViewer">
+            <summary>
+            Button field value
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.TooltipPersistentPanelEditor.OnEnable">
+            <summary>
+            Call to initialize class
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.TooltipPersistentPanelEditor.OnInspectorGUI">
+            <summary>
+            Implement this function to make a custom inspector.
+            <para>Call to draw TooltipPersistentPanel editor.</para>
+            </summary>
+        </member>
+        <member name="T:TooltipSystemsEditor.External.TriggerTooltipEditor">
+            <summary>
+            Provides functionality for editing Trigger Tooltip items
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.TriggerTooltipEditor.m_TriggerConditionProperty">
+            <summary>
+            TriggerCondition field value
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.TriggerTooltipEditor.OnEnable">
+            <summary>
+            Call to initialize class
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.TriggerTooltipEditor.OnInspectorGUI">
+            <summary>
+            Called to draw inspector controls
+            </summary>
+        </member>
+        <member name="T:TooltipSystemsEditor.External.TooltipControllerEditor">
+            <summary>
+            Provides functionTooltipControllerditing Show Tooltip items
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.TooltipControllerEditor.m_AutoPositionProperty">
+            <summary>
+            Use automatic positioning to show tooltip at collider position
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.TooltipControllerEditor.m_CameraProperty">
+            <summary>
+            Camera to use for automatic position calculation using WorldToScreenPoint
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.TooltipControllerEditor.m_OffsetProperty">
+            <summary>
+            Offset from collider position
+            </summary>
+        </member>
+        <member name="F:TooltipSystemsEditor.External.TooltipControllerEditor.m_TargetProperty">
+            <summary>
+            Target to center tooltip show positon
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.TooltipControllerEditor.OnEnable">
+            <summary>
+            Call to initialize class
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.External.TooltipControllerEditor.OnInspectorGUI">
+            <summary>
+            Called to draw inspector controls
+            </summary>
+        </member>
+        <member name="T:TooltipSystemsEditor.TooltipInfoDrawer">
+            <summary>
+            Use to draw a custom default TooltipInfo
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.TooltipInfoDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Called when inspector need to determin the rectangle to reserve for this property
+            </summary>
+            <param name="property">Property passed in by the base class</param>
+            <param name="label">Label name in by the base class</param>
+            <returns>Height to set inspector rectangle</returns>
+        </member>
+        <member name="M:TooltipSystemsEditor.TooltipInfoDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Called by the Editor to draw the inspector
+            </summary>
+            <param name="position">Rectangle to draw inspector</param>
+            <param name="property">Property passed in by the base class</param>
+            <param name="label">Label name in by the base class</param>
+        </member>
+        <member name="M:TooltipSystemsEditor.TooltipInfoDrawer.DrawInspector(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Use to draw a default TooltipInfo Inspector
+            </summary>
+            <param name="position">Rectangle to draw inspector</param>
+            <param name="property">Property passed in by the base class</param>
+            <param name="label">Label name in by the base class</param>
+        </member>
+        <member name="T:TooltipSystemsEditor.TooltipInfoProperty">
+            <summary>
+            Wraps a TooltipInfo SerializedProperty and provides access to the property values
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.TooltipInfoProperty.showConditionProp">
+            <summary>
+            Relative Property for TooltipInfo showCondition
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.TooltipInfoProperty.hideDelayTimeProp">
+            <summary>
+            Relative Property for TooltipInfo hideDelayTime
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.TooltipInfoProperty.visibleIconProp">
+            <summary>
+            Relative Property for TooltipInfo visibleIconIcon
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.TooltipInfoProperty.spriteProp">
+            <summary>
+            Relative Property for TooltipInfo sprite
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.TooltipInfoProperty.colorProp">
+            <summary>
+            Relative Property for TooltipInfo color
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.TooltipInfoProperty.messageProp">
+            <summary>
+            Relative Property for TooltipInfo message
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.TooltipInfoProperty.showCondition">
+            <summary>
+            Value of Relative Property for TooltipInfo showCondition
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.TooltipInfoProperty.hideDelayTime">
+            <summary>
+            Value of Relative Property for TooltipInfo hideDelayTime
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.TooltipInfoProperty.visibleIcon">
+            <summary>
+            Value of Relative Property for TooltipInfo visibleIcon
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.TooltipInfoProperty.sprite">
+            <summary>
+            Value of Relative Property for TooltipInfo sprite
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.TooltipInfoProperty.color">
+            <summary>
+            Value of Relative Property for TooltipInfo color
+            </summary>
+        </member>
+        <member name="P:TooltipSystemsEditor.TooltipInfoProperty.message">
+            <summary>
+            Value of Relative Property for TooltipInfo message
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.TooltipInfoProperty.#ctor(UnityEditor.SerializedProperty)">
+            <summary>
+            Constructor for TooltipInfoProperty
+            </summary>
+            <param name="property">TooltipInfo SerializedProperty to use</param>
+        </member>
+        <member name="M:TooltipSystemsEditor.TooltipInfoProperty.DrawProperty">
+            <summary>
+            Draws SerializedProperty tooltipInfo using custom property drawer
+            </summary>
+        </member>
+        <member name="T:TooltipSystemsEditor.TooltipAssetUtils">
+            <summary>
+            Provides utility access to Tooltip Assets functionality
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.TooltipAssetUtils.DrawAddTooltipCanvas">
+            <summary>
+            This call locates the tooltip canvas prefab
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.TooltipAssetUtils.LoadAllAssetsAtPath(System.String)">
+            <summary>
+            http://forum.unity3d.com/threads/loadallassetsatpath.21444/
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TooltipSystemsEditor.TooltipAssetUtils.LoadAllObjectsWithAtPath``1(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TooltipSystemsEditor.TooltipEditorUtils">
+            <summary>
+            Provides utility access to Tooltip Editor functionality
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.TooltipEditorUtils.BeginChangeCheck(UnityEditor.SerializedObject)">
+            <summary>
+            Check if any control was changed inside a block of code.
+            </summary>
+            <param name="serializedObject">SerializedObject to check for changes</param>
+        </member>
+        <member name="M:TooltipSystemsEditor.TooltipEditorUtils.EndChangeCheck(UnityEditor.SerializedObject)">
+            <summary>
+            Ends a change check started with BeginChangeCheck ().
+            </summary>
+            <param name="serializedObject">SerializedObject to check for changes</param>
+            <returns>True if GUI.changed was set to true, otherwise false.</returns>
+        </member>
+        <member name="T:TooltipSystemsEditor.TooltipInfoUtility">
+            <summary>
+            Provides utility access to TooltipInfo functionality
+            </summary>
+        </member>
+        <member name="M:TooltipSystemsEditor.TooltipInfoUtility.DrawProperty(TooltipSystems.TooltipInfo@)">
+            <summary>
+            Draws a tooltipInfo value type
+            </summary>
+            <param name="tooltipInfo">TooltipInfo reference to draw</param>
+        </member>
+    </members>
+</doc>

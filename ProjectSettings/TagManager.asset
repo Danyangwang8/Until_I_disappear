@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - WheelTriggerFalse
+  - WheelTriggerTrue
+  - Arrow
+  - HomeOnMap
+  - Computer
+  - DoorInBedroom
+  - SoMe
+  - ExitButton
+  - Wheel
+  - StartQuest
+  - ExitButtonQuest
+  - Anger
+  - Harmony
+  - Beauty
+  - ANGERWHEEL
+  - BEAUTYWHEEL
+  - HARMONYWHEEL
+  - MallOnMap
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Arrow
+  - BackGround
+  - P&CCollider
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2546013501
+    locked: 0
+  - name: Panels
+    uniqueID: 2342738445
+    locked: 0
+  - name: FrontPanel
+    uniqueID: 468941731
+    locked: 0
+  - name: WheelPanel
+    uniqueID: 3393033765
+    locked: 0
+  - name: FrontElement
+    uniqueID: 2704230911
+    locked: 0

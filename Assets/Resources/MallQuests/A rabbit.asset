@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: A rabbit
+  m_EditorClassIdentifier: 
+  questHeadline: A rabbit
+  questDifficulty: 5
+  questText: Just outside the pet shop you see a small, frightened rabbit that has
+    escaped its cage.
+  StatTypeOne: 2
+  option1Text: Pick up the rabbit and deliver it back to the store.
+  option1positiveResult: 'You pick up the rabbit and bring it back. The store owner
+    is so happy he gives you a reward!
+
+    +4 money'
+  Option1StatSucces: 3
+  option1SuccesValue: 4
+  option1negativeResult: 'You pick up the rabbit with all the best intentions of returning
+    it the pet store, but suddenly you are on your way to the toilets.
+
+    At the toilets, you stab the rabbit with the sharpened pencil you used for your
+    math exam. You sit on the toilet and watch it slowly bleed to death.
+
+    -5 soul
+
+'
+  Option1StatFail: 1
+  option1FailValue: -5
+  StatTypeTwo: 1
+  option2Text: Pick up the rabbit and take some super cute selfies.
+  option2positiveResult: 'No one on SoMe can resist how cute you and the rabbit look
+    together.
+
+    +8 fame'
+  Option2StatSucces: 0
+  option2SuccesValue: 8
+  option2negativeResult: 'After you post the picture on SoMe, you realized that the
+    rabbit has shit on your t-shirt.
+
+    You are the laughing stock of the internet town.
+
+    -1 fame'
+  Option2StatFail: 0
+  option2FailValue: -1

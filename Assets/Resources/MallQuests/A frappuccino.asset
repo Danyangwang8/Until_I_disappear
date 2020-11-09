@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: A frappuccino
+  m_EditorClassIdentifier: 
+  questHeadline: A frappuccino
+  questDifficulty: 5
+  questText: 'Walking past a coffeeshop, you spot an almost full vanilla and strawberry
+    frappuccino with  sprinkles standing unguarded on a table. '
+  StatTypeOne: 0
+  option1Text: Sneak up to the frappuccino and steal it.
+  option1positiveResult: 'You sneak up to the table and quickly hide the frappuccino
+    under your clothes. It is the perfect crime.
+
+    +6 vitality'
+  Option1StatSucces: 2
+  option1SuccesValue: 6
+  option1negativeResult: 'You sneak up to the table and quickly hide the frappuccino
+    under your clothes. The owner, who was actually sitting right next to it, is now
+    looking at you. You put it back and walk away in awkward silence. '
+  Option1StatFail: 2
+  option1FailValue: 0
+  StatTypeTwo: 1
+  option2Text: "\u201COMG frappuccino!\u201D Charm the cashier to give you a free
+    sample."
+  option2positiveResult: 'No one can resist a beauty like you.
+
+    He gives you one with Mango Unicorn Stardust flavor. It is super yummy.
+
+    +6 vitality '
+  Option2StatSucces: 2
+  option2SuccesValue: 6
+  option2negativeResult: After you have been trying for a while, the cashier calls
+    security. They drag you away screaming-
+  Option2StatFail: 2
+  option2FailValue: 0

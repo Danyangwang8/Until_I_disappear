@@ -1,0 +1,1710 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TooltipSystems</name>
+    </assembly>
+    <members>
+        <member name="T:TooltipSystems.Events.TooltipConditionEventData">
+            <summary>
+            Wrapper around TooltipUIEventData providing additional properties for tooltip intergration
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Events.TooltipConditionEventData.eventCondition">
+            <summary>
+            Type of condition this event will respond to
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Events.TooltipConditionEventData.CreateEventData(TooltipSystems.TooltipUIEventData,TooltipSystems.Events.TooltipEvent.EventCondition)">
+            <summary>
+            Creates a new TooltipConditionEventData for sharing event information
+            </summary>
+            <param name="tooltipUIEventData">Base class information</param>
+            <param name="eventCondition">Type of condition this event will respond to</param>
+            <returns>A new TooltipConditionEventData</returns>
+        </member>
+        <member name="T:TooltipSystems.Events.TooltipEvent">
+            <summary>
+            Tooltip events to execute in conjunction with showing/hiding the tooltip
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Events.TooltipEvent.InvokeReferencedEvents(TooltipSystems.Events.ITooltipEvents,System.Object,TooltipSystems.Events.TooltipConditionEventData)">
+            <summary>
+            Invokes events referenced by the tooltip event interface
+            </summary>
+            <param name="eventsInterface"></param>
+            <param name="sender">Core panel sender of the tooltip event</param>
+            <param name="conditionEventData">Wrapper around PointerEventData providing additional properties for tooltip intergration</param>
+        </member>
+        <member name="T:TooltipSystems.Events.TooltipEvent.EventCondition">
+            <summary>
+            Condition on which to invoke the event(s)
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Events.TooltipEvent.EventCondition.Never">
+            <summary>
+            Never invoke the events on the list
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Events.TooltipEvent.EventCondition.OnShow">
+            <summary>
+            Fire event when tooltip shows
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Events.TooltipEvent.EventCondition.OnDestroy">
+            <summary>
+            Invokes event when tooltip is destroyed
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Events.TooltipEvent.m_EventCondition">
+            <summary>
+            Condition on which to invoke the event(s)
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Events.TooltipEvent.m_Delay">
+            <summary>
+            Seconds to delay before firing event
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Events.TooltipEvent.eventCondition">
+            <summary>
+            Condition on which to invoke the event(s)
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Events.TooltipEvent.delay">
+            <summary>
+            Seconds to delay before invoking the event(s)
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Events.TooltipEvent.InvokeDelayedOnShow(TooltipSystems.Events.TooltipConditionEventData)">
+            <summary>
+            Invokes the event on show at the delay time
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TooltipSystems.Events.TooltipEvent.InvokeDelayedOnDestroy(TooltipSystems.Events.TooltipConditionEventData)">
+            <summary>
+            Invokes the event on destroy at the delay time
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TooltipSystems.Events.TooltipEvent.StartEventCoroutine(UnityEngine.MonoBehaviour,TooltipSystems.Events.TooltipConditionEventData)">
+            <summary>
+            Invokes the event depending on condition at the delay time
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.Events.ITooltipEvents">
+            <summary>
+            Interface to use with tooltip events
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Events.ITooltipEvents.tooltipCoreUI">
+            <summary>
+            Event(s) to invoke when tooltip is shown or hidden
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Events.ITooltipEvents.tooltipEvents">
+            <summary>
+            Event(s) to invoke when tooltip is shown or hidden
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Events.ITooltipEvents.InvokeReferencedEvents(System.Object,TooltipSystems.Events.TooltipEvent.EventCondition,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Invokes events referenced by the tooltip event interface
+            <para>Call TooltipEvent.InvokeReferencedEvents(ITooltipEvents, object, TooltipEvent.Condition); inside this implementation to invoke events.</para>
+            </summary>
+            <param name="sender">Core panel sender of the tooltip event</param>
+            <param name="eventCondition">Condition on which to incoke the event</param>
+            <param name="eventArgs">Wrapper around PointerEventData providing additional properties for tooltip intergration</param>
+        </member>
+        <member name="T:TooltipSystems.Events.TooltipEventUI">
+            <summary>
+            Event tooltip UI element for expanded functionality like calling events on show/hide states
+            <para>Contains prefab panel selector</para>
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Events.TooltipEventUI.m_TooltipEvent">
+            <summary>
+            Event to trigger showing the tooltip
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Events.TooltipEventUI.m_TooltipEvents">
+            <summary>
+            Event to trigger showing the tooltip
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Events.TooltipEventUI.tooltipCoreUI">
+            <summary>
+            Tooltip UI item to show
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Events.TooltipEventUI.tooltipEvents">
+            <summary>
+            Event(s) to invoke when tooltip is shown or hidden
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Events.TooltipEventUI.OnEnable">
+            <summary>
+            Called when GameObject is enabled
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Events.TooltipEventUI.OnDisable">
+            <summary>
+            Called when GameObject is disabled
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Events.TooltipEventUI.OnTooltipActivated(System.Object,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Called when thr tooltip is activated by the animator
+            <para>Checks for reference equals to invoke tooltip events on show condition</para>
+            </summary>
+            <param name="sender">TooltipCorePanel invoking the event</param>
+            <param name="eventData">Event data</param>
+        </member>
+        <member name="M:TooltipSystems.Events.TooltipEventUI.OnDestroyingTooltip(System.Object,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Called before tooltip panel is destroyed by the animator
+            <para>Checks for reference equals to invoke tooltip events on destroy condition</para>
+            </summary>
+            <param name="sender">TooltipCorePanel invoking the event</param>
+            <param name="eventData">Event data</param>
+        </member>
+        <member name="M:TooltipSystems.Events.TooltipEventUI.InvokeReferencedEvents(System.Object,TooltipSystems.Events.TooltipEvent.EventCondition,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Invokes events referenced by the tooltip event interface
+            </summary>
+            <param name="sender">Core panel sender of the tooltip event</param>
+            <param name="eventCondition">Condition on which to incoke the event</param>
+            <param name="eventData">Wrapper around PointerEventData providing additional properties for tooltip intergration</param>
+        </member>
+        <member name="T:TooltipSystems.Events.EventsTooltip">
+            <summary>
+            Enhanced functionality for tooltip ui
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Events.EventsTooltip.m_TooltipUI">
+            <summary>
+            Tooltip UI item to show
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Events.EventsTooltip.m_TooltipEvents">
+            <summary>
+            Event to trigger showing the tooltip
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Events.EventsTooltip.tooltipCoreUI">
+            <summary>
+            Tooltip UI item to show
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Events.EventsTooltip.tooltipEvents">
+            <summary>
+            Event(s) to invoke when tooltip is shown or hidden
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Events.EventsTooltip.OnEnable">
+            <summary>
+            Called when GameObject is enabled
+            <para>Subscribe to TooltipCorePanel.OnTooltipActivated and TooltipCorePanel.OnDestroyingTooltip</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Events.EventsTooltip.OnDisable">
+            <summary>
+            Called when GameObject is disabled
+            <para>Unsubscribe from TooltipCorePanel.OnTooltipActivated and TooltipCorePanel.OnDestroyingTooltip</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Events.EventsTooltip.OnTooltipActivated(System.Object,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Called when thr tooltip is activated by the animator
+            <para>Checks for reference equals to invoke tooltip events on show condition</para>
+            </summary>
+            <param name="sender">TooltipCorePanel invoking the event</param>
+            <param name="eventData">Event data</param>
+        </member>
+        <member name="M:TooltipSystems.Events.EventsTooltip.OnDestroyingTooltip(System.Object,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Called before tooltip panel is destroyed by the animator
+            <para>Checks for reference equals to invoke tooltip events on destroy condition</para>
+            </summary>
+            <param name="sender">TooltipCorePanel invoking the event</param>
+            <param name="eventData">Event data</param>
+        </member>
+        <member name="M:TooltipSystems.Events.EventsTooltip.InvokeReferencedEvents(System.Object,TooltipSystems.Events.TooltipEvent.EventCondition,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Invokes events referenced by the tooltip event interface
+            </summary>
+            <param name="sender">Core panel sender of the tooltip event</param>
+            <param name="eventCondition">Condition on which to incoke the event</param>
+            <param name="eventData">Wrapper around PointerEventData providing additional properties for tooltip intergration</param>
+        </member>
+        <member name="T:TooltipSystems.External.TooltipController">
+            <summary>
+            <para>Shows a tooltip when invoked by an outside event call to ShowTooltip</para>
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.External.TooltipController.Target">
+            <summary>
+            Target to use to center position
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.TooltipController.Target.Self">
+            <summary>
+            Use self current GameObject this component is on
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.TooltipController.Target.Other">
+            <summary>
+            Use the tooltip reference to use as target
+            <para>If used for interaction between two GameObjects other should be the other GameObject</para>
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.External.TooltipController.autoPosition">
+            <summary>
+            Use camera to position tooltip centered around the local position
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipController.ShowTooltip">
+            <summary>
+            Shows tooltip with current options
+            <para>If target is other the referenced tooltip will be used for positioning</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipController.GetPosition(UnityEngine.Vector3)">
+            <summary>
+            Gets the position to show the tooltip based on the 
+            <para>automatic position, target and offset values</para>
+            </summary>
+            <param name="position">Position to center tooltip pivot on</param>
+            <returns>Position to show tooltip</returns>
+        </member>
+        <member name="T:TooltipSystems.External.TooltipExpandedUI">
+            <summary>
+            Expanded tooltip UI element for expanded functionality
+            <para>Contains prefab panel selector</para>
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.TooltipExpandedUI.m_PrefabIndex">
+            <summary>
+            Index to prefab panel to use
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.External.TooltipExpandedUI.prefabIndex">
+            <summary>
+            Index to prefab panel to use
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipExpandedUI.OnRequestedTooltip(TooltipSystems.Core.ITooltipCoreUI,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Called before a tooltip is requested
+            </summary>
+            <param name="tooltipCoreUI">TooltipCoreUI element requesting the tooltip</param>
+            <param name="eventData">Event payload associated with pointer events.</param>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipExpandedUI.Reset">
+            <summary>
+            Reset is used as an example that changes the sprite color from clear to white 
+            when this component is added for the first time.
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.External.TooltipReferenceAttribute">
+            <summary>
+            Attribute for drawing tooltip reference circle selector
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipReferenceAttribute.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.External.TooltipPanelPrefabIndexAttribute">
+            <summary>
+            Attribute for drawing tooltip panel prefab selector
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.TooltipPanelPrefabIndexAttribute.label">
+            <summary>
+            Label to use when drawing property control
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipPanelPrefabIndexAttribute.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="label">Control label text</param>
+        </member>
+        <member name="T:TooltipSystems.External.ColliderTooltip">
+            <summary>
+            <para>Shows a tooltip on collider trigger events</para>
+            <para>Requires a Collider component be present on the GameObject</para>
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.External.ColliderTooltip.Mask">
+            <summary>
+            Tags or layers to filter colliders for trigger.
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ColliderTooltip.Mask.None">
+            <summary>
+            No filter applied
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ColliderTooltip.Mask.Tag">
+            <summary>
+            Filter GameObjects by tag
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ColliderTooltip.Mask.Layer">
+            <summary>
+            Filter GameObjects by layer
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ColliderTooltip.m_Mask">
+            <summary>
+            Mask uded to filter GameObjects for triggers
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ColliderTooltip.m_Tag">
+            <summary>
+            GameObject tag to serve as the trigger mask
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ColliderTooltip.m_Layer">
+            <summary>
+            GameObject layer to serve as the trigger mask.
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.ColliderTooltip.Awake">
+            <summary>
+            Awake is called when the script instance is being loaded.
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.ColliderTooltip.ShowTooltip(System.Enum,UnityEngine.Component)">
+            <summary>
+            Trigger the tooltip to show per condition set in this and bas classes
+            </summary>
+            <param name="condition">When to trigger the tooltip</param>
+            <param name="component">Collider triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.ColliderTooltip.ShowTooltip(System.Enum,UnityEngine.Component,UnityEngine.Vector2)">
+            <summary>
+            Sets event data and trigger to tooltip to show per condition set in this and bas classes
+            </summary>
+            <param name="condition">When to trigger the tooltip</param>
+            <param name="component">Collider triggering this message</param>
+            <param name="position">Position to show tooltip on screen</param>
+        </member>
+        <member name="T:TooltipSystems.External.CollisionTooltip">
+            <summary>
+            <para>Shows a tooltip on collider trigger or collision events</para>
+            <para>Requires a Collider and RigidBody component be present on the GameObject</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.CollisionTooltip.Awake">
+            <summary>
+            Called when script first starts to initialize
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.CollisionTooltip.GetIsTrigger">
+            <summary>
+            Finds the first compatible collider and get it isTrigger value
+            </summary>
+            <returns>True is the collider is set to trigger false if not</returns>
+        </member>
+        <member name="M:TooltipSystems.External.CollisionTooltip.OnTriggerEnter(UnityEngine.Collider)">
+            <summary>
+            Called when the Collider other enters the trigger.
+            </summary>
+            <param name="other">Collider triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.CollisionTooltip.OnTriggerStay(UnityEngine.Collider)">
+            <summary>
+            Calles once per frame for every Collider other that is touching the trigger.
+            </summary>
+            <param name="other">Collider triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.CollisionTooltip.OnTriggerExit(UnityEngine.Collider)">
+            <summary>
+            Called when the Collider other enters the trigger.
+            </summary>
+            <param name="other">Collider triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.CollisionTooltip.OnCollisionEnter(UnityEngine.Collision)">
+            <summary>
+            Called when the Collider other enters the trigger.
+            </summary>
+            <param name="collision">Collision triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.CollisionTooltip.OnCollisionStay(UnityEngine.Collision)">
+            <summary>
+            Calles once per frame for every Collider other that is touching the trigger.
+            </summary>
+            <param name="collision">Collision triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.CollisionTooltip.OnCollisionExit(UnityEngine.Collision)">
+            <summary>
+            Called when the Collider other enters the trigger.
+            </summary>
+            <param name="collision">Collision triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.CollisionTooltip.OnTriggerEnter2D(UnityEngine.Collider2D)">
+            <summary>
+            Called when the Collider other enters the trigger.
+            </summary>
+            <param name="other">Collider triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.CollisionTooltip.OnTriggerStay2D(UnityEngine.Collider2D)">
+            <summary>
+            Calles once per frame for every Collider other that is touching the trigger.
+            </summary>
+            <param name="other">Collider triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.CollisionTooltip.OnTriggerExit2D(UnityEngine.Collider2D)">
+            <summary>
+            Called when the Collider other enters the trigger.
+            </summary>
+            <param name="other">Collider triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.CollisionTooltip.OnCollisionEnter2D(UnityEngine.Collision2D)">
+            <summary>
+            Called when the Collider other enters the trigger.
+            </summary>
+            <param name="collision">Collision triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.CollisionTooltip.OnCollisionStay2D(UnityEngine.Collision2D)">
+            <summary>
+            Calles once per frame for every Collider other that is touching the trigger.
+            </summary>
+            <param name="collision">Collision triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.CollisionTooltip.OnCollisionExit2D(UnityEngine.Collision2D)">
+            <summary>
+            Called when the Collider other enters the trigger.
+            </summary>
+            <param name="collision">Collision triggering this message</param>
+        </member>
+        <member name="T:TooltipSystems.External.ExecuteTooltip">
+            <summary>
+            <para>Executes tooltip on MonoBehaviour messages/events.</para>
+            <para>Shows a tooltip on configured conditions</para>
+            <para>There are special cases like time delays.</para>
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.External.ExecuteTooltip.ResetShowed">
+            <summary>
+            Resets tooltip showed trigger to allow for re-show
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ExecuteTooltip.ResetShowed.Never">
+            <summary>
+            Never reset tooltip show triggered
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ExecuteTooltip.ResetShowed.OnColliderExit">
+            <summary>
+            Resets tooltip showed trigger when the collider is exited
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ExecuteTooltip.ResetShowed.OnTooltipClose">
+            <summary>
+            Resets tooltip showed trigger when the tooltip closes
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ExecuteTooltip.ResetShowed.OnExitOrClose">
+            <summary>
+            Resets tooltip showed trigger when the collider is exited or when the tooltip closes
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ExecuteTooltip.m_TooltipUI">
+            <summary>
+            Tooltip UI item to show
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ExecuteTooltip.m_ShowPosition">
+            <summary>
+            Position on screen to show tooltip
+            <para>Position pivot 0,0 is bottom left.</para>
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ExecuteTooltip.m_ShowDelay">
+            <summary>
+            Seconds to delay before showing tooltip
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ExecuteTooltip.m_ResetShowed">
+            <summary>
+            Resets tooltip showed trigger to allow for re-show
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ExecuteTooltip.m_TooltipTriggered">
+            <summary>
+            The tooltip was invoked to show
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.External.ExecuteTooltip.tooltip">
+            <summary>
+            Reference to the Tooltip UI item to show
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.External.ExecuteTooltip.eventData">
+            <summary>
+            Access to the current Tooltip event data
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ExecuteTooltip.m_PrefabIndex">
+            <summary>
+            Index to prefab panel to use
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.ExecuteTooltip.m_WrapLength">
+            <summary>
+            Wrap length to use line breaks automatically
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.External.ExecuteTooltip.prefabIndex">
+            <summary>
+            Index to prefab panel to use
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.External.ExecuteTooltip.wrapLength">
+            <summary>
+            Forced wrap length for tooltip message
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.External.ExecuteTooltip.showCondition">
+            <summary>
+            Condition on which to show the tooltip.
+            <para>Normally set to TooltipShowCondition.NotSet</para>
+            <para>To supply custom show conditions set in inheriting classes</para>
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.External.ExecuteTooltip.trans">
+            <summary>
+            Exposes a cached transform to inheriting classes
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.ExecuteTooltip.OnEnable">
+            <summary>
+            Called when GameObject is enabled
+            <para>Subscribe to TooltipCorePanel.OnDestroyingTooltip</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.ExecuteTooltip.OnDisable">
+            <summary>
+            Called when GameObject is disabled
+            <para>Unsubscribe from TooltipCorePanel.OnDestroyingTooltip</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.ExecuteTooltip.OnDestroyingTooltip(System.Object,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Called before tooltip panel is destroyed by the animator
+            <para>Checks for reference equals to invoke tooltip events on destroy condition</para>
+            </summary>
+            <param name="sender">TooltipCorePanel invoking the event</param>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:TooltipSystems.External.ExecuteTooltip.InvokeShowTooltip">
+            <summary>
+            Invokes ShowTooltip method in show delay time
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.ExecuteTooltip.ShowTooltip(System.Enum,UnityEngine.Component)">
+            <summary>
+            Trigger to tooltip to show per condition set in this and bas classes
+            </summary>
+            <param name="condition">When to trigger the tooltip</param>
+            <param name="component">Collider triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.ExecuteTooltip.ShowTooltip(System.Enum,UnityEngine.Component,UnityEngine.Vector2)">
+            <summary>
+            Sets event data and trigger to tooltip to show per condition set in this and bas classes
+            </summary>
+            <param name="condition">When to trigger the tooltip</param>
+            <param name="component">Collider triggering this message</param>
+            <param name="position">Position to show tooltip on screen</param>
+        </member>
+        <member name="M:TooltipSystems.External.ExecuteTooltip.SetEventData(UnityEngine.Vector2)">
+            <summary>
+            Sets TooltipUIEventData using current EventSystem
+            </summary>
+            <param name="position">Position to show tooltip</param>
+        </member>
+        <member name="M:TooltipSystems.External.ExecuteTooltip.DoTooltip">
+            <summary>
+            Shows tooltip instantly considering event data is configured.
+            <para>If not, use ShowTooltip(System.Enum, Component, Vector2)</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.ExecuteTooltip.SetTooltipMessage(System.String)">
+            <summary>
+            Shows tooltip.
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.ExecuteTooltip.ShowTooltip">
+            <summary>
+            Shows tooltip.
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.ExecuteTooltip.ResetTrigger">
+            <summary>
+            Resets the triggered boolean allowing the event to be triggered again
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.ExecuteTooltip.ResetTriggerOnExit">
+            <summary>
+            Resets the triggered boolean allowing the event to be triggered again
+            <para>Invoked when the collider is exited</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.ExecuteTooltip.ResetTriggerOnClose">
+            <summary>
+            Resets the triggered boolean allowing the event to be triggered again
+            <para>Invoked when the tooltip closes</para>
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.External.TooltipPersistentIconPanel">
+            <summary>
+            Add this component to any UnityEngine.UI GameObject that has a RectTransform Component.  This panel houses the tooltip text component and a close button
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.TooltipPersistentIconPanel.m_TooltipImage">
+            <summary>
+            Image UI element used for tooltip icon
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.External.TooltipPersistentIconPanel.image">
+            <summary>
+            Image component for this tooltip icon
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.External.TooltipPersistentIconPanel.visibleIcon">
+            <summary>
+            Is the tooltip icon visible
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipPersistentIconPanel.InitTooltipCoreUI(TooltipSystems.Core.ITooltipCoreUI)">
+            <summary>
+            Additional set required by the panel
+            </summary>
+            <param name="tooltipCoreUI">Information about the tooltip to show</param>
+        </member>
+        <member name="T:TooltipSystems.External.PointerCondition">
+            <summary>
+            Condition on which to show the tooltip.
+            <para>PointerCondition uses colliders to detemine state</para>
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.PointerCondition.None">
+            <summary>
+            No active pointer condition, will not allow interaction
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.PointerCondition.Enter">
+            <summary>
+            Pointer has entered the target bounding box
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.PointerCondition.Down">
+            <summary>
+            Pointer has pressed the target collider
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.PointerCondition.Up">
+            <summary>
+            Pointer has been raised and was over the target bounding box
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.PointerCondition.Exit">
+            <summary>
+            Pointer has exited the target bounding box
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.PointerCondition.AsButton">
+            <summary>
+            Pointer has been pressed and released over the bounding collider, acts as a button click event
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.External.PointerTooltip">
+            <summary>
+            <para>Shows a tooltip on pointer trigger events</para>
+            <para>Requires a Collider component be present on the GameObject</para>
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.External.PointerTooltip.showCondition">
+            <summary>
+            Condition on which to show the tooltip.
+            <para>Set to Pointer Condition</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.PointerTooltip.Awake">
+            <summary>
+            Awake is called when the script instance is being loaded.
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.PointerTooltip.OnPointerEnter(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            Pointer entered over GameObject collider bounding box
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.PointerTooltip.OnPointerDown(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            Pointer down over GameObject
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.PointerTooltip.OnPointerUp(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            Pointer released and was over GameObject
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.PointerTooltip.OnPointerExit(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            Pointer exited over GameObject collider bounding box
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.PointerTooltip.OnPointerClick(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            Pointer released over GameObject
+            <para>GameObject clicked as a button</para>
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.External.TooltipExpandedCanvas">
+            <summary>
+            Provides canvas that controls tooltip lifecycle with a list of tooltip panels to choose
+            <para>Requires a GraphicRaycaster component for tooltip interactions</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipExpandedCanvas.FindActiveInstance">
+            <summary>
+            Finds the first TooltipCoreCanvas in the scene
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipExpandedCanvas.FindCoreCanvas">
+            <summary>
+            Finds the first TooltipCoreCanvas asset
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:TooltipSystems.External.TooltipExpandedCanvas.m_PanelPool">
+            <summary>
+            All panels created are stored in this collection and removed when hide is called on the panel
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.External.TooltipExpandedCanvas.camera">
+            <summary>
+            Camera attached for GameObject physic raycasting
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.External.TooltipExpandedCanvas.tooltipPanelPrefabs">
+            <summary>
+            A list of tooltip panel prefabs to choose to use to show tooltips
+            <para><remarks>NOTE: Cache. Return value is a look up.</remarks></para>
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.External.TooltipExpandedCanvas.PoolPrefab">
+            <summary>
+            Wrapper 
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.TooltipExpandedCanvas.PoolPrefab.panelPrefab">
+            <summary>
+            Prefab to create tooltip panels from
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.TooltipExpandedCanvas.PoolPrefab.minimum">
+            <summary>
+            Minimum amount is the initial amount instantiated
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.TooltipExpandedCanvas.PoolPrefab.maximum">
+            <summary>
+            maximum amount to create before pool reports empty
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipExpandedCanvas.GetPanelToShow(System.Int32)">
+            <summary>
+            Creates a panel from the list of prefabs
+            <param name="prefabIndex">Index of prefab panel to use for tooltip</param>
+            </summary>
+            <returns>Newly created panel</returns>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipExpandedCanvas.Awake">
+            <summary>
+            Awake is called when the script instance is being loaded.
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipExpandedCanvas.Show(TooltipSystems.Core.ITooltipCoreUI,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Prepare and show the requested tooltip
+            </summary>
+            <param name="tooltipCoreUI">ITooltipCoreUI component containing tooltip information</param>
+            <param name="eventData">Event data generated by the EventSystems</param>
+            <returns>Reference to TooltipCoreCanvas showing the tooltip or NULL if no reference created/found</returns>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipExpandedCanvas.OnEnable">
+            <summary>
+            This function is called when the object becomes enabled and active.
+            <para>Subscribes to TooltipCorePanel.OnTooltipActivated</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipExpandedCanvas.OnDisable">
+            <summary>
+            This function is called when the behavior becomes disabled or inactive.
+            <para>Unsubscribe from TooltipCorePanel.OnTooltipActivated</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipExpandedCanvas.OnTooltipActivated(System.Object,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Call when tooltip is activated after the instantiation process
+            </summary>
+            <param name="sender">TooltipCorePanel sending the event</param>
+            <param name="eventData">Wrapper around PointerEventData providing additional properties for tooltip processing</param>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipExpandedCanvas.ShowTooltip(TooltipSystems.Core.TooltipCoreUI)">
+            <summary>
+            Shows a dynamic tooltip message from any tooltip
+            </summary>
+            <param name="tooltipCoreUI">tooltip to show message</param>
+        </member>
+        <member name="T:TooltipSystems.External.IPersistentPanel">
+            <summary>
+            Interface to use an interactable button with the tooltip
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.External.IPersistentPanel.button">
+            <summary>
+            Button attached to detect clicks
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.External.TooltipPersistentPanel">
+            <summary>
+            Add this component to any UnityEngine.UI GameObject that has a RectTransform Component.  This panel houses the tooltip text component and a close button
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.TooltipPersistentPanel.m_Button">
+            <summary>
+            Button attached to detect clicks
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.External.TooltipPersistentPanel.button">
+            <summary>
+            Button attached to detect clicks
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.External.TooltipOnStart">
+            <summary>
+            <para>Shows a tooltip on MonoBehaviour Start message call</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipOnStart.Awake">
+            <summary>
+            Awake is called when the script instance is being loaded.
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.TooltipOnStart.Start">
+            <summary>
+            Start is called on the frame when a script is enabled just before any of the Update methods is called the first time.
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.External.TriggerCondition">
+            <summary>
+            Condition on which to show the tooltip.
+            <para>TriggerCondition uses colliders to detemine state</para>
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.TriggerCondition.Enter">
+            <summary>
+            Another collider has entered the bounding box
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.TriggerCondition.Stay">
+            <summary>
+            Another collider is staying in the bounding box, works like Enter but will trigger continously
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.External.TriggerCondition.Exit">
+            <summary>
+            Another collider has exited the bounding box
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.External.TriggerTooltip">
+            <summary>
+            <para>Shows a tooltip on collider trigger events</para>
+            <para>Requires a Collider component be present on the GameObject</para>
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.External.TriggerTooltip.showCondition">
+            <summary>
+            Condition on which to show the tooltip.
+            <para>Set to Trigger Condition</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.External.TriggerTooltip.OnTriggerEnter(UnityEngine.Collider)">
+            <summary>
+            Called when the Collider other enters the trigger.
+            </summary>
+            <param name="other">Collider triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.TriggerTooltip.OnTriggerStay(UnityEngine.Collider)">
+            <summary>
+            Calles once per frame for every Collider other that is touching the trigger.
+            </summary>
+            <param name="other">Collider triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.TriggerTooltip.OnTriggerExit(UnityEngine.Collider)">
+            <summary>
+            Called when the Collider other enters the trigger.
+            </summary>
+            <param name="other">Collider triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.TriggerTooltip.OnTriggerEnter2D(UnityEngine.Collider2D)">
+            <summary>
+            Called when the Collider other enters the trigger.
+            </summary>
+            <param name="other">Collider triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.TriggerTooltip.OnTriggerStay2D(UnityEngine.Collider2D)">
+            <summary>
+            Calles once per frame for every Collider other that is touching the trigger.
+            </summary>
+            <param name="other">Collider triggering this message</param>
+        </member>
+        <member name="M:TooltipSystems.External.TriggerTooltip.OnTriggerExit2D(UnityEngine.Collider2D)">
+            <summary>
+            Called when the Collider other enters the trigger.
+            </summary>
+            <param name="other">Collider triggering this message</param>
+        </member>
+        <member name="T:TooltipSystems.Core.ITooltipCoreUI">
+            <summary>
+            Interface to communicate core tooltip UI functionality
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Core.ITooltipCoreUI.onClickEvent">
+            <summary>
+            Button Click event associated with this ITooltipCoreUI
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Core.ITooltipCoreUI.tooltipInfo">
+            <summary>
+            Contains the tooltip information
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Core.ITooltipCoreUI.tooltipMessage">
+            <summary>
+            Shortcut to tooltip information message property
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Core.ITooltipCoreUI.visibleIcon">
+            <summary>
+            Shortcut to tooltip information visibleIcon property
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.Core.TooltipCoreCanvas">
+            <summary>
+            Provides core tooltip for canvas that controls tooltip lifecycle
+            Requires a CanvasScaler component
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Core.TooltipCoreCanvas.m_TooltipPanelPrefab">
+            <summary>
+            Prefab to create tooltip panels from
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Core.TooltipCoreCanvas.tooltipPanelPrefab">
+            <summary>
+            Prefab to use to show tooltips
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Core.TooltipCoreCanvas.m_TooltipPanels">
+            <summary>
+            All panels created are stored in this collection and removed when hide is called on the panel
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.Core.TooltipCoreCanvas.GetTooltip">
+            <summary>
+            Delegate for setting tooltip
+            </summary>
+            <param name="tooltipCoreUI">TooltipCoreUI object requesting the tooltip</param>
+            <param name="eventData">Tooltip pointer event data sent with the tooltip</param>
+        </member>
+        <member name="E:TooltipSystems.Core.TooltipCoreCanvas.OnGetTooltip">
+            <summary>
+            Event to allow access to set tooltip
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.Core.TooltipCoreCanvas.SetTooltipMessage">
+            <summary>
+            Delegate for setting tooltip message
+            </summary>
+            <param name="tooltipCoreUI">Reference to ITooltipCoreUI to change message on</param>
+        </member>
+        <member name="E:TooltipSystems.Core.TooltipCoreCanvas.OnSetTooltipMessage">
+            <summary>
+            Event to allow access to set tooltip message
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.Core.TooltipCoreCanvas.SetTooltipIcon">
+            <summary>
+            Delegate for setting tooltip message
+            </summary>
+            <param name="tooltipCoreUI">Reference to ITooltipCoreUI to change icon on</param>
+        </member>
+        <member name="E:TooltipSystems.Core.TooltipCoreCanvas.OnSetTooltipIcon">
+            <summary>
+            Event to allow access to set tooltip icon
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreCanvas.CreatePanel(TooltipSystems.Core.TooltipCorePanel)">
+            <summary>
+            Creates a tooltip panel for a prefab that inherits from TooltipCorePanel
+            </summary>
+            <param name="tooltipPanelPrefab">Panel Prefab GameObject to instantiate</param>
+            <returns>Newly created tooltip panel GameObject</returns>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreCanvas.ShowTooltip(TooltipSystems.Core.ITooltipCoreUI,TooltipSystems.TooltipUIEventData,System.String)">
+            <summary>
+            Used to show tooltip from any EventSystems callback that is attached to an object using a ITooltipCoreUI component.
+            </summary>
+            <param name="tooltipCoreUI">ITooltipCoreUI component containing tooltip information</param>
+            <param name="eventData">Event data generated by the EventSystems</param>
+            <param name="message">Message to show to replace the TooltipCoreUI TooltipInfo</param>
+            <returns>Reference to CoreCanvas showing the tooltip</returns>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreCanvas.ShowTooltip(TooltipSystems.Core.ITooltipCoreUI,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Used to show tooltip from any EventSystems callback that is attached to an object using a ITooltipCoreUI component.
+            </summary>
+            <param name="tooltipCoreUI">ITooltipCoreUI component containing tooltip information</param>
+            <param name="eventData">Event data generated by the EventSystems</param>
+            <returns>Reference to CoreCanvas showing the tooltip</returns>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreCanvas.Awake">
+            <summary>
+            Awake is called when the script instance is being loaded.
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreCanvas.OnEnable">
+            <summary>
+            This function is called when the object becomes enabled and active.
+            <para>Subscribes to TooltipCoreUI.OnRequestTooltip and TooltipCorePanel.OnDestroyingTooltip</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreCanvas.OnDisable">
+            <summary>
+            This function is called when the behavior becomes disabled or inactive.
+            <para>Unsubscribe from TooltipCoreUI.OnRequestTooltip and TooltipCorePanel.OnDestroyingTooltip</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreCanvas.OnShowTooltip(TooltipSystems.Core.ITooltipCoreUI,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Calls ShowTooltip to show the requested tooltip
+            </summary>
+            <param name="tooltipCoreUI">Tooltip to show</param>
+            <param name="eventData">Args to use describing positioning data</param>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreCanvas.OnDestroyingTooltip(System.Object,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Called when tooltip is about to be destroyed
+            </summary>
+            <param name="sender">TooltipCorePanel sending the event</param>
+            <param name="eventData">Wrapper around PointerEventData providing additional properties for tooltip processing</param>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreCanvas.ShowTooltip(System.String)">
+            <summary>
+            Shows a dynamic tooltip message from an EventSystems callback
+            </summary>
+            <param name="message">Message to show as the tooltip</param>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreCanvas.ShowTooltip(System.Single)">
+            <summary>
+            Shows a dynamic tooltip message from an EventSystems callback
+            </summary>
+            <param name="value">Value to show as the tooltip</param>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreCanvas.ShowTooltip(System.Boolean)">
+            <summary>
+            Shows a dynamic tooltip message from an EventSystems callback
+            </summary>
+            <param name="value">Value to show as the tooltip</param>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreCanvas.HideTooltipPanels">
+            <summary>
+            Hides all tooltip panels by calling its HideFast method
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreCanvas.GetPanelToShow(System.Int32)">
+            <summary>
+            Creates a panel to show the tooltip
+            </summary>
+            <param name="prefabIndex">Index of prefab panel to use for tooltip</param>
+            <returns>Newly created tooltip panel</returns>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreCanvas.GetCorePanel(TooltipSystems.Core.ITooltipCoreUI)">
+            <summary>
+            Retrieve a CorePanel stored in the CoreCanvas
+            </summary>
+            <param name="tooltipCoreUI">Key referencing the CorePanel</param>
+            <returns>A CorePanel or null</returns>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreCanvas.Show(TooltipSystems.Core.ITooltipCoreUI,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Prepare and show the requested tooltip
+            </summary>
+            <param name="tooltipCoreUI">ITooltipCoreUI component containing tooltip information</param>
+            <param name="eventData">Event data generated by the EventSystems</param>
+            <returns>Reference to TooltipCoreCanvas showing the tooltip or NULL if no reference created/found</returns>
+        </member>
+        <member name="T:TooltipSystems.Core.TooltipCoreIconPanel">
+            <summary>
+            Core tooltip panel the UI element holding the tooltip with an icon
+            Basic tooltip panel text and image for an icon
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Core.TooltipCoreIconPanel.m_TooltipImage">
+            <summary>
+            Image UI element used for tooltip icon
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Core.TooltipCoreIconPanel.image">
+            <summary>
+            Image component for this tooltip icon
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Core.TooltipCoreIconPanel.visibleIcon">
+            <summary>
+            Is the tooltip icon visible
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Core.TooltipCoreIconPanel.OnModifyIcon">
+            <summary>
+            Called to allow for icon modification
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreIconPanel.InitTooltipCoreUI(TooltipSystems.Core.ITooltipCoreUI)">
+            <summary>
+            Additional set required by the panel
+            </summary>
+            <param name="tooltipCoreUI">Information about the tooltip to show</param>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreIconPanel.InitIcon(TooltipSystems.IIconPanel,TooltipSystems.Core.ITooltipCoreUI)">
+            <summary>
+            Set icon to tooltip info settings
+            </summary>
+            <param name="iconPanel">Icon panel to change</param>
+            <param name="tooltipCoreUI">Settings to change to</param>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreIconPanel.ModifyIcon(TooltipSystems.IIconPanel)">
+            <summary>
+            Modify panel on PostInit
+            </summary>
+            <param name="iconPanel">Icon panel to change</param>
+        </member>
+        <member name="T:TooltipSystems.Core.TooltipCorePanel">
+            <summary>
+            Core tooltip panel the UI element holding the tooltip
+            Basic tooltip panel text only
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Core.TooltipCorePanel.hideDelayTime">
+            <summary>
+            Time to delay before hiding the tooltip
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Core.TooltipCorePanel.m_TooltipText">
+            <summary>
+            Text UI element used for tooltip message
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Core.TooltipCorePanel.m_HideTrigger">
+            <summary>
+            Trigger used by animator to hide tooltip
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Core.TooltipCorePanel.m_HideFastTrigger">
+            <summary>
+            Trigger used by animator to hide tooltip at a faster rate
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Core.TooltipCorePanel.m_Anim">
+            <summary>
+            Reference to the attached animator component
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Core.TooltipCorePanel.panel">
+            <summary>
+            RectTransform component for this tooltip the base panel
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Core.TooltipCorePanel.text">
+            <summary>
+            Text component for this tooltip message
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Core.TooltipCorePanel.message">
+            <summary>
+            Message to show when tooltip is shown
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Core.TooltipCorePanel.tooltipCoreUI">
+            <summary>
+            Holds tooltip information
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.Core.TooltipCorePanel.TooltipPanelDestroy">
+            <summary>
+            Delegate defining destroy tooltip
+            </summary>
+            <param name="corePanel">Core panel being destroyed</param>
+        </member>
+        <member name="E:TooltipSystems.Core.TooltipCorePanel.OnTooltipPanelDestroy">
+            <summary>
+            Called before tooltip panel is destroyed by the animator
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Core.TooltipCorePanel.OnTooltipActivated">
+            <summary>
+            Event to broadcast tooltip panel is showing
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Core.TooltipCorePanel.OnDestroyingTooltip">
+            <summary>
+            Event to broadcast tooltip panel is about to be destroyed
+            <para>Called before tooltip panel is destroyed by the animator</para>
+            </summary>
+        </member>
+        <member name="E:TooltipSystems.Core.TooltipCorePanel.OnModifyMessage">
+            <summary>
+            Event to allow access to set tooltip message
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCorePanel.Awake">
+            <summary>
+            Initializes animator and base panel
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCorePanel.Start">
+            <summary>
+            Start is called on the frame when a script is enabled just before any of the Update methods is called the first time.
+            Invokes the hide tooltip function
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCorePanel.Hide">
+            <summary>
+            Hide tooltip with the animator HideTrigger 
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCorePanel.HideFast">
+            <summary>
+            Fast Hide tooltip with the animator HideTrigger 
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCorePanel.DestroyPanel">
+            <summary>
+            Destroys the tooltip panel
+            <para>Default behaviour: Called by the animator</para>
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCorePanel.Activate">
+            <summary>
+            Shows the tooltip by SetActive() with the tooltipInfo provided
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCorePanel.Initialize(UnityEngine.RectTransform,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Initialize the tooltip to the parent UI element with EventSystems PointerEventData
+            </summary>
+            <param name="parent">Parent UI element requesting the tooltip</param>
+            <param name="eventData">EventSystems generated data</param>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCorePanel.InitTooltipCoreUI(TooltipSystems.Core.ITooltipCoreUI)">
+            <summary>
+            Additional set required by the panel
+            </summary>
+            <param name="tooltipCoreUI">Information about the tooltip to show</param>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCorePanel.ModifyMessage(TooltipSystems.ITooltipPanel)">
+            <summary>
+            Modify panel on PostInit
+            </summary>
+            <param name="tooltipPanel">Tooltip panel to change</param>
+        </member>
+        <member name="T:TooltipSystems.Core.TooltipCoreUI">
+            <summary>
+            Core tooltip UI element
+            Contains all functionality to initiate tooltip interactions
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Core.TooltipCoreUI.currentEventData">
+            <summary>
+            Access to the current EventSystems Pointer Event data
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.Core.TooltipCoreUI.RequestTooltip">
+            <summary>
+            Delegate defining pre request tooltip functionality
+            </summary>
+            <param name="tooltipCoreUI">TooltipCoreUI component requesting the tooltip</param>
+            <param name="eventData">EventSystems pointer event data</param>
+        </member>
+        <member name="E:TooltipSystems.Core.TooltipCoreUI.OnRequestTooltip">
+            <summary>
+            Provides to pre request tooltip functionality
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Core.TooltipCoreUI.m_TooltipInfo">
+            <summary>
+            Contains the tooltip information
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Core.TooltipCoreUI.m_OnClickEvent">
+            <summary>
+            Add all button click events into the event list below for LongPress to work with button click events
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Core.TooltipCoreUI.onClickEvent">
+            <summary>
+            Button Click event associated with this ITooltipCoreUI
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Core.TooltipCoreUI.tooltipInfo">
+            <summary>
+            Contains the tooltip information
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Core.TooltipCoreUI.tooltipMessage">
+            <summary>
+            Shortcut to tooltip information message property
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.Core.TooltipCoreUI.visibleIcon">
+            <summary>
+            Shortcut to tooltip information visibleIcon property
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.Core.TooltipCoreUI.m_EventFoldedOut">
+            <summary>
+            Used for foldouts in Editor Inspector
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreUI.Reset">
+            <summary>
+            Reset class data to default state
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreUI.OnPointerEnter(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            Evaluate current state and transition to appropriate state.
+            </summary>
+            <param name="eventData">Event payload associated with pointer (mouse / touch) events.</param>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreUI.OnPointerDown(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            Evaluate current state and transition to pressed state.
+            </summary>
+            <param name="eventData">Event payload associated with pointer (mouse / touch) events.</param>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreUI.OnPointerUp(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            Evaluate eventData and transition to appropriate state.
+            </summary>
+            <param name="eventData">Event payload associated with pointer (mouse / touch) events.</param>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreUI.OnPointerExit(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            Evaluate current state and transition to normal state.
+            </summary>
+            <param name="eventData">Event payload associated with pointer (mouse / touch) events.</param>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreUI.OnPointerClick(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            Evaluate current click state.
+            </summary>
+            <param name="eventData">Event payload associated with pointer (mouse / touch) events.</param>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreUI.DoEvent(TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Fires tooltip using provided event data
+            </summary>
+            <param name="eventData">Event data to send with tootip event</param>
+        </member>
+        <member name="M:TooltipSystems.Core.TooltipCoreUI.OnRequestedTooltip(TooltipSystems.Core.ITooltipCoreUI,TooltipSystems.TooltipUIEventData)">
+            <summary>
+            Called before a tooltip is requested
+            </summary>
+            <param name="tooltipCoreUI">TooltipCoreUI element requesting the tooltip</param>
+            <param name="eventData">Event payload associated with pointer events.</param>
+        </member>
+        <member name="T:TooltipSystems.TooltipSystemsSettings">
+            <summary>
+            Setting required to manage tooltip systems
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.TooltipSystemsSettings.Instance">
+            <summary>
+            Access to single instance class
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.TooltipSystemsSettings.GetTryIt">
+            <summary>
+            Is this version the free Try It version
+            </summary>
+            <returns>True if this is the Try It version</returns>
+        </member>
+        <member name="M:TooltipSystems.TooltipSystemsSettings.GetInEditor">
+            <summary>
+            The project is running in the Unity Editor
+            </summary>
+            <returns>rue if this is the application is running in the Unity Editor</returns>
+        </member>
+        <member name="M:TooltipSystems.TooltipSystemsSettings.DoTryIt(System.Action)">
+            <summary>
+            Allows action to be invoked depending on is try it version
+            </summary>
+            <param name="action">The action to preform.  ie The main action to disable the functionality</param>
+        </member>
+        <member name="T:TooltipSystems.TooltipUIExtensions">
+            <summary>
+            Used enhance Tooltip Core UI interface
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.TooltipUIExtensions.SetMessage(TooltipSystems.Core.TooltipCoreUI,System.String)">
+            <summary>
+            Sets a tooltip message on a TooltipCoreUI entity
+            </summary>
+            <param name="tooltipUI">TooltipCoreUI to set message on</param>
+            <param name="message">Text message to set on tooltip</param>
+            <returns>TooltipCoreUI for further assignment</returns>
+        </member>
+        <member name="M:TooltipSystems.TooltipUIExtensions.SetShowCondition(TooltipSystems.Core.TooltipCoreUI,TooltipSystems.TooltipShowCondition)">
+            <summary>
+            Sets a tooltip message on a TooltipCoreUI entity
+            </summary>
+            <param name="tooltipUI">TooltipCoreUI to set message on</param>
+            <param name="showCondition">Conditions on which to show the tooltip</param>
+            <returns>TooltipCoreUI for further assignment</returns>
+        </member>
+        <member name="T:TooltipSystems.ModifyTooltipEventArgs">
+            <summary>
+            Used to modify the tooltip after creation and before showing
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.ModifyTooltipEventArgs.tooltipCoreUI">
+            <summary>
+            Tooltip core to modify
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.ModifyTooltipEventArgs.#ctor(TooltipSystems.Core.ITooltipCoreUI)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="tooltipCoreUI">Tooltip core to modify</param>
+        </member>
+        <member name="T:TooltipSystems.ITooltipPanel">
+            <summary>
+            Interface to show tooltip message
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.ITooltipPanel.tooltipCoreUI">
+            <summary>
+            Contains the tooltip information
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.ITooltipPanel.message">
+            <summary>
+            Message to show when tooltip is shown
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.ITooltipPanel.InitTooltipCoreUI(TooltipSystems.Core.ITooltipCoreUI)">
+            <summary>
+            Additional settings required by the panel
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.IIconPanel">
+            <summary>
+            Interface to show tooltip icon
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.IIconPanel.image">
+            <summary>
+            Image component for this tooltip icon
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.IIconPanel.visibleIcon">
+            <summary>
+            Is the tooltip icon visible
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.TooltipInfo">
+            <summary>
+            Holds tooltip information
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.TooltipInfo.op_Equality(TooltipSystems.TooltipInfo,TooltipSystems.TooltipInfo)">
+            <summary>
+            Equality operator for TooltipInfo
+            </summary>
+            <param name="first">First tooltipInfo for comparssion</param>
+            <param name="second">Second tooltipInfo for comparssion</param>
+            <returns>True if the tooltipInfo contain the same values and references</returns>
+        </member>
+        <member name="M:TooltipSystems.TooltipInfo.op_Inequality(TooltipSystems.TooltipInfo,TooltipSystems.TooltipInfo)">
+            <summary>
+            Inequality operator for TooltipInfo
+            </summary>
+            <param name="first">First tooltipInfo for comparssion</param>
+            <param name="second">Second tooltipInfo for comparssion</param>
+            <returns>True if the tooltipInfo does not contain the same values and references</returns>
+        </member>
+        <member name="F:TooltipSystems.TooltipInfo.showCondition">
+            <summary>
+            Condition on which to show the tooltip
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.TooltipInfo.visibleIcon">
+            <summary>
+            Is the tooltip icon visible
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.TooltipInfo.sprite">
+            <summary>
+            Sprite shown on the tooltip as an icon
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.TooltipInfo.color">
+            <summary>
+            Color of sprite shown for tooltip icon
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.TooltipInfo.message">
+            <summary>
+            Message shown as the tooltip
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.TooltipInfo.hideDelayTime">
+            <summary>
+            Time to hide tooltip after
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.TooltipInfo.Reset">
+            <summary>
+            Resets tooltip info to default values
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.TooltipInfo.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance is equal to a specified
+            </summary>
+            <param name="tooltipInfo">An object to compare with this instance, or null.</param>
+            <returns>true if tooltipInfo is a TooltipInfo with the same underlying type and value as 
+            this instance; otherwise, false.</returns>
+        </member>
+        <member name="M:TooltipSystems.TooltipInfo.GetHashCode">
+            <summary>
+            Returns the hash code for the value of this instance.
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
+        <member name="T:TooltipSystems.TooltipShowCondition">
+            <summary>
+            Conditions on which to show the tooltip
+            This provides cross-platform show conditions
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.TooltipShowCondition.LongPress">
+            <summary>
+            LongPress or LongClick to activate the tooltip
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.TooltipShowCondition.Hover">
+            <summary>
+            Hover to activate the tooltip generally used for standalone builds
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.TooltipShowCondition.Click">
+            <summary>
+            Touch or Click to activate the tooltip
+            </summary>
+        </member>
+        <member name="F:TooltipSystems.TooltipShowCondition.NotSet">
+            <summary>
+            Activate for the tooltip is not set
+            </summary>
+        </member>
+        <member name="T:TooltipSystems.TooltipUIEventData">
+            <summary>
+            Wrapper around PointerEventData providing additional properties for tooltip intergration
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.TooltipUIEventData.tooltipShowCondition">
+            <summary>
+            Condition on which to show the tooltip
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.TooltipUIEventData.pointerEventData">
+            <summary>
+            PointerEventData associated with the tooltip
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.TooltipUIEventData.position">
+            <summary>
+            Shortcut to the pointer event data position
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.TooltipUIEventData.camera">
+            <summary>
+            Shortcut to the pointer event data press camera
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.TooltipUIEventData.wrapLength">
+            <summary>
+            Wraps tooltips depending on wrap length.
+            <para>This effect happens if the value is greater than zero and the tooltip massage does not have any new line characters.</para>
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.TooltipUIEventData.prefabIndex">
+            <summary>
+            Gets/Sets the prefab index to use for the tooltip panel form the canvas list
+            </summary>
+        </member>
+        <member name="P:TooltipSystems.TooltipUIEventData.isDestructible">
+            <summary>
+            Should the panel be destroyed after showing and hiding
+            </summary>
+        </member>
+        <member name="M:TooltipSystems.TooltipUIEventData.#ctor(TooltipSystems.TooltipShowCondition,UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            Creates a new TooltipUIEventData
+            </summary>
+            <param name="showCondition">Condition on which to show the tooltip</param>
+            <param name="eventData">PointerEventData associated with the tooltip</param>
+        </member>
+        <member name="M:TooltipSystems.TooltipUIEventData.LongPressed(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            Constructs an event data structure for a LongPress/LongClick event
+            </summary>
+            <param name="eventData">PointerEventData to construct event with</param>
+            <returns>LongPress tooltip event data structure</returns>
+        </member>
+        <member name="M:TooltipSystems.TooltipUIEventData.Click(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            Constructs an event data structure for a Press/Click event
+            </summary>
+            <param name="eventData">PointerEventData to construct event with</param>
+            <returns>Click tooltip event data structure</returns>
+        </member>
+        <member name="M:TooltipSystems.TooltipUIEventData.Hover(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            Constructs an event data structure for a Hover event
+            </summary>
+            <param name="eventData">PointerEventData to construct event with</param>
+            <returns>Hover tooltip event data structure</returns>
+        </member>
+        <member name="M:TooltipSystems.TooltipUIEventData.NotSet(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            Constructs an event data structure for a NotSet event (With Default Values)
+            </summary>
+            <param name="eventData">PointerEventData to construct event with</param>
+            <returns>NotSet tooltip event data structure (With Default Values)</returns>
+        </member>
+    </members>
+</doc>

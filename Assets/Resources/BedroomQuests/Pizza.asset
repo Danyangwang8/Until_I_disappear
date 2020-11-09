@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: Pizza
+  m_EditorClassIdentifier: 
+  questHeadline: Pizza!
+  questDifficulty: 10
+  questText: While checking out a fashion site you spot a banner ad that offers a
+    discount on pizza delivery.
+  StatTypeOne: 2
+  option1Text: "\u201CI will not eat that unhealthy filth!\u201D"
+  option1positiveResult: "You resisted the urge to buy the unhealthy pizza for dinner.
+    The saint of fitness applauds you. \n+3 soul"
+  Option1StatSucces: 1
+  option1SuccesValue: 3
+  option1negativeResult: 'The pizza is gluten free and vegan. You can not stop yourself
+    from ordering a whole pie.
+
+    -2 Money
+
+'
+  Option1StatFail: 3
+  option1FailValue: -2
+  StatTypeTwo: 0
+  option2Text: "Revenge time!\nOrder pizza and make them deliver it to Anna\u2019s
+    apartment.\n"
+  option2positiveResult: 'You order 10 anchovies and pineapple pizzas delivered to
+    Anna''s apartment. You feel the sweet energy of revenge refresh your exhausted
+    body.
+
+    +4 vitality'
+  Option2StatSucces: 2
+  option2SuccesValue: 4
+  option2negativeResult: "The man in the phone recognizes your voice and hangs up.
+    After all, this is not the first time you ordered pizza to Anna\u2019s house.\n-2
+    vitality"
+  Option2StatFail: 2
+  option2FailValue: -2

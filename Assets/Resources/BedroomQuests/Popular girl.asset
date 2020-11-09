@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: Popular girl
+  m_EditorClassIdentifier: 
+  questHeadline: Popular girl
+  questDifficulty: 10
+  questText: A popular girl you used to know has just posted a picture of herself
+    online. She looks amazing!
+  StatTypeOne: 0
+  option1Text: Write a negative comment.
+  option1positiveResult: "You write, \u201DYou ugly bitch! I will puke margaritas
+    on your mother's grave. Well, nobody likes you anyway.\u201D. \nThe comment receives
+    a lot of likes.\n+5 fame\n"
+  Option1StatSucces: 0
+  option1SuccesValue: 5
+  option1negativeResult: "You write, \u201CNot haters, but photoshop is gonna make
+    you famous\u201D. Nobody really understand what you mean. What a fail.\n-2 fame."
+  Option1StatFail: 0
+  option1FailValue: -2
+  StatTypeTwo: 1
+  option2Text: Write a positive comment.
+  option2positiveResult: "You write, \u201DSo cute! We should hang out more\u201D
+    You are not sure that you meant it, but it feels good to have written it. \n+2
+    soul"
+  Option2StatSucces: 1
+  option2SuccesValue: 2
+  option2negativeResult: "You write \u201CWow! What a nice colour of your lipstick!
+    Can I borrow it sometime?\u201D Completely pathetic.\n-1 soul  \n"
+  Option2StatFail: 1
+  option2FailValue: -1

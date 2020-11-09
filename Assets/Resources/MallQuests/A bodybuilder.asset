@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: A bodybuilder
+  m_EditorClassIdentifier: 
+  questHeadline: A bodybuilder
+  questDifficulty: 5
+  questText: While taking selfies at the candy store a muscular man approaches you
+    and asks if he can be in the picture.
+  StatTypeOne: 1
+  option1Text: "Sure, let\u2019s take some pictures!"
+  option1positiveResult: "You strike some amazing poses together! It is yin and yang
+    of beauty and muscle. \nIt turns out that the man runs a blog about bodybuilding,
+    and after the photo session he gives you some good health advice. \n+3 vitality"
+  Option1StatSucces: 2
+  option1SuccesValue: 3
+  option1negativeResult: "The photos look awful. You look weak and pale compared to
+    the muscular man. \nThe situation is made worse he posts them on his bodybuilder
+    blog for all his followers to see.\n-1 fame"
+  Option1StatFail: 0
+  option1FailValue: -1
+  StatTypeTwo: 0
+  option2Text: "\u201COMG, you creep! I do not take pictures with strangers!\u201D"
+  option2positiveResult: 'Even though he is a mountain of muscle, he has no defence
+    against your rain of insults.
+
+    You shame him until he starts crying. Of course, you were recording it on your
+    phone while it was happening.
+
+    +7 fame
+
+'
+  Option2StatSucces: 0
+  option2SuccesValue: 7
+  option2negativeResult: "The man runs a bodybuilder blog and writes a blogpost about
+    what a terrible narcissistic person you are. It is shared all over the internet.
+    \n-2 fame"
+  Option2StatFail: 0
+  option2FailValue: -2

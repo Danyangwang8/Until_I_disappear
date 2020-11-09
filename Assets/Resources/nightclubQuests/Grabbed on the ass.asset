@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: Grabbed on the ass
+  m_EditorClassIdentifier: 
+  questHeadline: Grabbed on the ass
+  questDifficulty: 5
+  questText: Nowhere is better to be seen than on the dancefloor, so you decide to
+    hit it hard. While dancing you feel a hand on your behind and turn around to see
+    a young man with a big smile on his chin blinking at you.
+  StatTypeOne: 0
+  option1Text: Slap him in his ugly face.
+  option1positiveResult: 'Quick as lightning, you slap his ugly face. The slapping
+    sound is so loud that the entire dancefloor turns around and look at him. He runs
+    to the toilets crying.
+
+    +8 Soul'
+  Option1StatSucces: 1
+  option1SuccesValue: 8
+  option1negativeResult: 'He dodges your slap and you end up hitting a random stranger
+    instead. You end up buying the stranger a drink, while you talk about the creepy
+    ass-grabber.
+
+    -3 money'
+  Option1StatFail: 3
+  option1FailValue: -3
+  StatTypeTwo: 2
+  option2Text: Slap him in his self-righteous face.
+  option2positiveResult: 'You slap him in his self-righteous face. He tells you that
+    he only did it as a compliment. You slap him again. Hard.
+
+    +8 soul'
+  Option2StatSucces: 1
+  option2SuccesValue: 8
+  option2negativeResult: You try to slap him in his self-righteous face, but he has
+    already disappeared into a crowd on the dancefloor. Properly grabbing other people's
+    behinds.
+  Option2StatFail: 0
+  option2FailValue: 0

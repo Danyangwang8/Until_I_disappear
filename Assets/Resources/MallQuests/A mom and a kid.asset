@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: A mom and a kid
+  m_EditorClassIdentifier: 
+  questHeadline: A mom and a kid
+  questDifficulty: 5
+  questText: 'At the escalators a stressed out mom with a crying child asks you to
+    watch the toddler while she does some shopping. '
+  StatTypeOne: 2
+  option1Text: "\u201CSure, I will be glad to help out.\u201D"
+  option1positiveResult: 'The woman''s kid does not stop crying and you find him to
+    be super annoying. However, it does not take too long before the mother returns.
+    She gives you some pocket money for your trouble.
+
+    +5 money '
+  Option1StatSucces: 3
+  option1SuccesValue: 5
+  option1negativeResult: The kid is crying and super annoying. You try to get him
+    to shut up, but it only makes him run away. You decide to do the same.
+  Option1StatFail: 3
+  option1FailValue: 0
+  StatTypeTwo: 0
+  option2Text: "\u201CSure, I will be glad to help out\u201D, you whispered with a
+    lurky smile."
+  option2positiveResult: "After the mother leaves, you push the kid in the back so
+    he falls down the escalator. You film it on your phone and upload the video right
+    away. It goes viral instantly! \n+7 fame"
+  Option2StatSucces: 0
+  option2SuccesValue: 7
+  option2negativeResult: "You try to push the annoying kid down the escalators and
+    make a video, but the kid tricks you and pushes you instead. As you fall down
+    the escalators, you notice for the first time just how long they are. \n-1 fame\n"
+  Option2StatFail: 0
+  option2FailValue: -1

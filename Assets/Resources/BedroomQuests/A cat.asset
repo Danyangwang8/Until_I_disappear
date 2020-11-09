@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: A cat
+  m_EditorClassIdentifier: 
+  questHeadline: A cat
+  questDifficulty: 0
+  questText: A cat jumps through your window and starts screaming while scratching
+    everything within reach.
+  StatTypeOne: 2
+  option1Text: Poor cat. Help it to get back outside.
+  option1positiveResult: 'The cat jumps up in your arms and licks your chin. You feel
+    a strange warm feeling in your tummy.
+
+    +2 soul'
+  Option1StatSucces: 1
+  option1SuccesValue: 2
+  option1negativeResult: 'The cat shits on your carpet before you are able to get
+    it out. Cleaning the mess really drains your soul.
+
+    -2 soul'
+  Option1StatFail: 1
+  option1FailValue: -2
+  StatTypeTwo: 1
+  option2Text: Make a video of the cat.
+  option2positiveResult: 'The cat is going crazy to get out but it looks super cute
+    as it runs about. Everybody likes your video.
+
+    +4 fame'
+  Option2StatSucces: 0
+  option2SuccesValue: 4
+  option2negativeResult: 'The cat hides under your bed before you are able to make
+    a film of it.
+
+    After a while you stop waiting for it. You never see the cat agai. Maybe it is
+    still under there?'
+  Option2StatFail: 0
+  option2FailValue: 0

@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: 3 knocks on your front door
+  m_EditorClassIdentifier: 
+  questHeadline: 3 knocks on your front door
+  questDifficulty: 10
+  questText: After mindlessly surfing around for what feels like ages, you are brought
+    back to the physical world by 3 knocks on your front door.
+  StatTypeOne: 0
+  option1Text: Shout to make them go away!
+  option1positiveResult: "You violently knock back while screaming \u201CGo away,
+    I do not buy stuff at the doors, or care to hear about jesus.\u201D\nThe person
+    goes away and you feel the sweet, refreshing rush of victory.\n+1 vitality\n"
+  Option1StatSucces: 2
+  option1SuccesValue: 1
+  option1negativeResult: 'The person keeps knocking and you think you hear crying.
+    After a while everything becomes silent.
+
+    Later you remember that you had an appointment with your mother.
+
+    -2 soul
+
+'
+  Option1StatFail: 1
+  option1FailValue: -2
+  StatTypeTwo: 1
+  option2Text: Charm whoever is at the door.
+  option2positiveResult: "\u201CPlease, come in\u201D, you call out with the sweetest
+    voice you can muster. It is your mom and she made you your favorite pasta. You
+    scarf it down as quickly as you can and show her to the door.\n+2 vitality"
+  Option2StatSucces: 2
+  option2SuccesValue: 2
+  option2negativeResult: "\u201CPlease, come in\u201D, you call out with the sweetest
+    voice you can muster. It ends up sounding way too sexy.\nIt is your mom and the
+    situation is now super awkward. You just stand in the door and stare at each other
+    until she walks away.\n-2 soul"
+  Option2StatFail: 1
+  option2FailValue: -2

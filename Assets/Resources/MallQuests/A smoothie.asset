@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: A smoothie
+  m_EditorClassIdentifier: 
+  questHeadline: A smoothie
+  questDifficulty: 0
+  questText: "As you walk past a smoothie bar, your eyes spot a new smoothie on the
+    menu that promises baby skin and eternal youth. It\u2019s a blend of kiwi, chia
+    seeds, durian and cumin."
+  StatTypeOne: 1
+  option1Text: 'Omg! Get the smoothie right away!
+
+'
+  option1positiveResult: 'You buy the smoothie and feel its magical energy flow through
+    your body. It is so overwhelming that you have to sit down for a while after you
+    finish it.
+
+    +4 soul'
+  Option1StatSucces: 1
+  option1SuccesValue: 4
+  option1negativeResult: 'The magical energy of the smoothie is too much for your
+    fragile body. You run to the toilets and puke it all up.
+
+    -3 money'
+  Option1StatFail: 3
+  option1FailValue: -3
+  StatTypeTwo: 2
+  option2Text: Resist this hypnotising, delicious and refreshing beverage.
+  option2positiveResult: "You gather all your strength and resist the urge for this
+    heavenly smoothie. You succeed, and the experience strengthens your willpower.
+    \n+4 soul"
+  Option2StatSucces: 1
+  option2SuccesValue: 4
+  option2negativeResult: "You gather all your strength and try to resist the urge
+    for this heavenly smoothie. It is impossible to resist. You end up ordering one
+    with cream and marshmallow topping. \n-3 money\n"
+  Option2StatFail: 3
+  option2FailValue: -3

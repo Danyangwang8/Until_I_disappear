@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: Drinking too much
+  m_EditorClassIdentifier: 
+  questHeadline: 'Drinking too much '
+  questDifficulty: 5
+  questText: 'You decide to drink some shots while taking selfies for SoMe. You want
+    to make the picture just the right amount of wild, and end up drinking a bunch
+    of shots before you get the perfect selfie.
+
+    Before you know it you are way too drunk.'
+  StatTypeOne: 2
+  option1Text: Find a place to sleep it off.
+  option1positiveResult: "You manage to pull yourself together and find a small spot
+    in the wardrobe where you can take a nap without anyone noticing you. \nYou dream
+    about a better world and wake up full of energy.\n+8 vitality."
+  Option1StatSucces: 2
+  option1SuccesValue: 8
+  option1negativeResult: 'You desperately look for a place to sleep, but everywhere
+    you look people are making out. After a while, you pass out under a table in the
+    bar. When you wake up someone has been searching your pockets and have stolen
+    your money.
+
+    -5 money.'
+  Option1StatFail: 3
+  option1FailValue: -5
+  StatTypeTwo: 1
+  option2Text: Find someone that can take even more pictures of you, alcohol is bottled
+    confidence.
+  option2positiveResult: "A rock n\u2019 roll chick agrees to take pictures of you
+    striking some sexy poses.\nThe pictures are a bit daring but you post them on
+    SoMe right away, obviously, they get lots of attention. Maybe you should drink
+    more?\n+15 fame"
+  Option2StatSucces: 0
+  option2SuccesValue: 15
+  option2negativeResult: "A rock n\u2019 roll chick agrees to take pictures of you
+    striking some sexy poses.\nThe pictures are a bit daring, but you post them on
+    SoMe right away. Sadly someone reports them as being too revealing and the pictures
+    get censored. What a waste of time and alcohol."
+  Option2StatFail: 0
+  option2FailValue: 0

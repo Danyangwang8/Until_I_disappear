@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: Wishing well
+  m_EditorClassIdentifier: 
+  questHeadline: Wishing well
+  questDifficulty: 5
+  questText: You stumble upon the mall wishing well. It is full of coins and the only
+    person close by is a fat tourist resting on the edge of the pool.
+  StatTypeOne: 2
+  option1Text: Throw some coins in the well.
+  option1positiveResult: 'You throw some pocket change in the well while taking a
+    selfie.
+
+    People on SoMe are bedazzled by your mental surplus.
+
+    +7 fame'
+  Option1StatSucces: 0
+  option1SuccesValue: 7
+  option1negativeResult: "You had such good intentions but in the end you decide to
+    stick your hand in the pool and try to reach some coins. The tourist stares at
+    you with a weird, sad look upon his face. \n+2 money"
+  Option1StatFail: 3
+  option1FailValue: 2
+  StatTypeTwo: 0
+  option2Text: 'Photo opportunity!
+
+    Push the tourist in into the wishing well.'
+  option2positiveResult: "You push the tourist, even though he is heavy you manage
+    to get him into the well. \nYou quickly snap a picture and run off.\n+8 fame"
+  Option2StatSucces: 0
+  option2SuccesValue: 8
+  option2negativeResult: "You push the tourist and, even though he is heavy, you manage
+    to get him into the well. \nJust before you are about to take the picture, you
+    get a strange unfamiliar feeling in your tummy. Suddenly you find yourself running
+    away.\n-1 soul"
+  Option2StatFail: 1
+  option2FailValue: -1

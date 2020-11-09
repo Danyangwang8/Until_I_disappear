@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: Drugs
+  m_EditorClassIdentifier: 
+  questHeadline: Drugs
+  questDifficulty: 0
+  questText: 'A young couple invites you to follow them to the toilets, they say that
+    they know you from your awesome SoMe pictures.
+
+    When you get out there they pull out a bag of really strong psychedelic drugs
+    and asks if you want some.'
+  StatTypeOne: 0
+  option1Text: Yes.
+  option1positiveResult: 'You do the psychedelic drugs together with the couple and
+    afterward, you hit the dancefloor.
+
+    You feel like an Indian goddess coming up with new exotic dance moves and end
+    up owning the dancefloor. Everybody notice you.
+
+    +13 fame'
+  Option1StatSucces: 0
+  option1SuccesValue: 13
+  option1negativeResult: 'You do the psychedelic drugs together with the couple and
+    afterward, you hit the dancefloor. As you stand there you notice how people around
+    you slowly turn into long-necked pigs that all stare at you with dead eyes - while
+    they whisper your mother''s name. You run to the toilet where you puke until the
+    effect of the drugs takes off.
+
+    -5 vitality'
+  Option1StatFail: 2
+  option1FailValue: -5
+  StatTypeTwo: 2
+  option2Text: No.
+  option2positiveResult: 'You kindly say no. The young couple is surprised about your
+    high morality and decides to follow your example.  You flush the drugs in the
+    toilet.
+
+    +5 soul'
+  Option2StatSucces: 1
+  option2SuccesValue: 5
+  option2negativeResult: 'You want to say, no but your lips say yes. The next thing
+    you know you are doing sexy dance at a pole on the dancefloor. When you come to
+    your senses you are exhausted and sore.
+
+    -8 vitality'
+  Option2StatFail: 2
+  option2FailValue: -8

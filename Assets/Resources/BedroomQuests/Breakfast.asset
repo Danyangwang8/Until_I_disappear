@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: Breakfast
+  m_EditorClassIdentifier: 
+  questHeadline: breakfast
+  questDifficulty: 10
+  questText: "Earlier today you posted a picture of your breakfast on SoMe. The picture
+    received a decent amount of attention but disaster has just struck! A troll has
+    commented, \u201CLol, it looks like something my dog puked up\u201D. "
+  StatTypeOne: 0
+  option1Text: Try to write something hurtful back at him.
+  option1positiveResult: "Like a true trollslayer you write, \u201CFunny you should
+    write that. IT IS ACTUALLY A PICTURE OF YOUR FACE!!\u201D\n+4 fame\n"
+  Option1StatSucces: 0
+  option1SuccesValue: 4
+  option1negativeResult: "You try to come up with a clever response, but nothing comes
+    up. In the end you decide to write \u201CWhat about yourself.\u201D Deep in your
+    heart you know that you have failed.\n-1 fame"
+  Option1StatFail: 0
+  option1FailValue: -1
+  StatTypeTwo: 2
+  option2Text: "\u201CWrite something nice to him because he is obviously having a
+    bad day\u201D\n"
+  option2positiveResult: "\u201CYou write, \u201CThanks for your input. I actually
+    do not own a dog.\u201D\n+2 soul"
+  Option2StatSucces: 1
+  option2SuccesValue: 2
+  option2negativeResult: "You take a deep breath and try to be calm, but it is impossible.
+    \nYou write, \u201CDogfucker, I do not own a dog!!!##!!! I hope you choke in dog
+    poo!!!\n-2 soul"
+  Option2StatFail: 1
+  option2FailValue: -2

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: Wheelchair
+  m_EditorClassIdentifier: 
+  questHeadline: 
+  questDifficulty: 0
+  questText: A disabled girl from your old school has posted a picture of a broken
+    wheelchair. She claims she fell down the stairs.
+  StatTypeOne: 0
+  option1Text: Troll her.
+  option1positiveResult: "You write, \u201CI guess you did not hit the jackpot on
+    the WHEEL(CHAIR) of fortune.\u201D People act like you are out of line, but you
+    know they think your funny.\n+5 fame"
+  Option1StatSucces: 0
+  option1SuccesValue: 5
+  option1negativeResult: "You write, \u201CI guess you did not hit the jackpot. Maybe
+    it is because you are stupid?\u201D You do not know what went wrong, but people
+    do not find it funny at all.\n-2 fame\n"
+  Option1StatFail: 0
+  option1FailValue: -2
+  StatTypeTwo: 2
+  option2Text: Show compassion.
+  option2positiveResult: 'you show compassion, nothing really happens.
+
+    +1 soul.'
+  Option2StatSucces: 1
+  option2SuccesValue: 1
+  option2negativeResult: 'you ignore the picture, nobody likes to think about disabled
+    people.
+
+    -2 soul
+
+'
+  Option2StatFail: 1
+  option2FailValue: -2

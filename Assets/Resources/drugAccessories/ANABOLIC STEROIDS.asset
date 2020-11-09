@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ab58206c88c41bea46461564387106, type: 3}
+  m_Name: ANABOLIC STEROIDS
+  m_EditorClassIdentifier: 
+  Title: ANABOLIC STEROIDS
+  Picture: {fileID: 21300000, guid: 14bb2578829764bcc8b917c48b2cfaf6, type: 3}
+  Boost: 5
+  Price: 10
+  StatType: 1

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: A burger
+  m_EditorClassIdentifier: 
+  questHeadline: A burger
+  questDifficulty: 5
+  questText: 'At the burger bar you find a half eaten burger and some fries left on
+    the floor in a quiet corner. '
+  StatTypeOne: 0
+  option1Text: Eat burger and fries.
+  option1positiveResult: "It tastes like cardboard and is colder than you thought
+    possible. Nevertheless you decide to eat up. \n+6 vitality"
+  Option1StatSucces: 2
+  option1SuccesValue: 6
+  option1negativeResult: "You eat the cold burger before noticing that a rat has used
+    it as a nesting place. \nYou are pretty sure that you were able to puke out all
+    the half chewed baby rats. \nPretty sure..."
+  Option1StatFail: 2
+  option1FailValue: 0
+  StatTypeTwo: 2
+  option2Text: 'grab your phone to post a picture and complain about why modern humans
+    are such messy filthy pigs. '
+  option2positiveResult: 'You feel good about yourself.
+
+    +3 soul'
+  Option2StatSucces: 1
+  option2SuccesValue: 3
+  option2negativeResult: 'Nobody cares.
+
+    Nothing happens.
+
+'
+  Option2StatFail: 1
+  option2FailValue: 0

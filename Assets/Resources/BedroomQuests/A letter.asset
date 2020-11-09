@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: A letter
+  m_EditorClassIdentifier: 
+  questHeadline: A letter
+  questDifficulty: 10
+  questText: 'A letter arrives in your inbox. It is a distant relative that needs
+    help transferring a big sum of money from an overseas account. All you have to
+    do is to give him your bank account number. '
+  StatTypeOne: 2
+  option1Text: 'Help the guy.
+
+    Blood is thicker than water.'
+  option1positiveResult: 'The guy thanks you very much and having all those money
+    on your account even pays of a small interest.
+
+    +3 money'
+  Option1StatSucces: 3
+  option1SuccesValue: 3
+  option1negativeResult: "Something goes wrong and the bank blocks the transaction.
+    It is too complicated to understand and somehow you lose a bit of money in the
+    process. \n-2 money"
+  Option1StatFail: 3
+  option1FailValue: -2
+  StatTypeTwo: 0
+  option2Text: No way, it must be a scam!
+  option2positiveResult: 'You grab a screenshot of the mail and post it on SoMe to
+    warn everybody. The warning gets lots of reshares. You really made a difference.
+
+    +4 fame'
+  Option2StatSucces: 0
+  option2SuccesValue: 4
+  option2negativeResult: 'You decide to do ignore the mail. All this serious stuff
+    has really worn you out.
+
+    -2 vitality'
+  Option2StatFail: 2
+  option2FailValue: -1

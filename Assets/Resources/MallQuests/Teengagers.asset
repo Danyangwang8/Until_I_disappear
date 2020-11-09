@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adb559a28adf41bcacad1927733191b, type: 3}
+  m_Name: Teengagers
+  m_EditorClassIdentifier: 
+  questHeadline: Teengagers
+  questDifficulty: 5
+  questText: After walking the corridors for some time, you see some teenagers laughing
+    while pulling down the pants of a nerdy boy.
+  StatTypeOne: 0
+  option1Text: 'Picture opportunity!
+
+    Try to snap a picture for your blog.'
+  option1positiveResult: "You quickly snap a picture of the embarrassed naked boy
+    and post it online. \n+7 fame"
+  Option1StatSucces: 0
+  option1SuccesValue: 7
+  option1negativeResult: 'You drop your phone while taking it out of your pocket and
+    the screen cracks. Everybody laughs at you.
+
+    -2 money'
+  Option1StatFail: 3
+  option1FailValue: -2
+  StatTypeTwo: 1
+  option2Text: Charm the teenagers so the nerd can escape.
+  option2positiveResult: 'You catwalk in a circle around the teenagers. They are hypnotized
+    by your beauty. They all grab their phones and take pictures of you.
+
+    +7 fame
+
+'
+  Option2StatSucces: 0
+  option2SuccesValue: 7
+  option2negativeResult: 'You try to catwalk in front of the teenagers, but somehow
+    you stumble and fall to the ground. The teenagers forget the nerd and start to
+    laugh at you instead.
+
+    -2 fame '
+  Option2StatFail: 0
+  option2FailValue: -2
